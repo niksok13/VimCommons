@@ -1,11 +1,11 @@
 using System;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
-using VimCore.Runtime.DependencyManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using VimCore.Runtime.DependencyManagement;
 
-namespace ModuleSceneManagement.ServiceLevelLoader
+namespace VimSceneManagement.Runtime.ServiceLevelLoader
 {
     public class ServiceLevelLoader : MonoBehaviour, ILevelLoader
     {

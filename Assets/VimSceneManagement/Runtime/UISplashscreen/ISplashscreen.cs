@@ -1,7 +1,7 @@
 
 using System.Threading.Tasks;
 
-namespace ModuleSceneManagement.UISplashscreen
+namespace VimSceneManagement.Runtime.UISplashscreen
 {
     public interface ISplashscreen
     {

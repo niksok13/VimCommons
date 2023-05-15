@@ -4,7 +4,7 @@ using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.EZTween;
 using VimCore.Runtime.MVVM;
 
-namespace ModuleSceneManagement.UISplashscreen
+namespace VimSceneManagement.Runtime.UISplashscreen
 {
     
     public class ModelUISplashscreen: ModelBehaviour, ISplashscreen

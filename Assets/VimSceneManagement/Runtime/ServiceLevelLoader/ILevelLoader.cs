@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace ModuleSceneManagement.ServiceLevelLoader
+namespace VimSceneManagement.Runtime.ServiceLevelLoader
 {
     public interface ILevelLoader
     {

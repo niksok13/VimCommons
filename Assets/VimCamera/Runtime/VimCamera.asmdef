@@ -1,5 +1,5 @@
 {
-    "name": "ModuleCamera",
+    "name": "VimCamera",
     "rootNamespace": "",
     "references": [
         "GUID:090a698f1327a4874b85940ad70f9768",

@@ -1,0 +1,17 @@
+{
+    "name": "VimInput",
+    "rootNamespace": "",
+    "references": [
+        "GUID:090a698f1327a4874b85940ad70f9768",
+        "GUID:6b6ff240f195542d59ab94ae1ee0d14c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

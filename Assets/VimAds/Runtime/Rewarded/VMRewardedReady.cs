@@ -1,7 +1,7 @@
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
 
-namespace VimAds.ServiceAds.Rewarded
+namespace VimAds.Runtime.Rewarded
 {
     public class VMRewardedReady : MonoBehaviour
     {

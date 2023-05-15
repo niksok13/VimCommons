@@ -3,7 +3,7 @@ using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.Utils;
 using VimInput.Runtime.InputTouch;
 
-namespace VimAds.ServiceAds.Interstitial
+namespace VimAds.Runtime.Interstitial
 {
     public class ServiceInterstitial : MonoBehaviour, IInterstitial
     {

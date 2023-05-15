@@ -1,4 +1,4 @@
-namespace VimAds.ServiceAds.Banner
+namespace VimAds.Runtime.Banner
 {
     public interface IBanner
     {

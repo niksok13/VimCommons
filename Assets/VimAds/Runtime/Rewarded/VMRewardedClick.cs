@@ -4,7 +4,7 @@ using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
 using VimCore.Runtime.MVVM.ViewModels.Input;
 
-namespace VimAds.ServiceAds.Rewarded
+namespace VimAds.Runtime.Rewarded
 {
     public class VMRewardedClick :
         ASignalEmitter<SignalClick, CanvasRenderer>,

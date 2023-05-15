@@ -1,9 +1,9 @@
 using System;
-using VimAds.ServiceAds.Interstitial;
+using VimAds.Runtime.Interstitial;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
 
-namespace VimAds.ServiceAds.Rewarded
+namespace VimAds.Runtime.Rewarded
 {
     public class ServiceRewarded : ModelBehaviour, IRewarded
     {

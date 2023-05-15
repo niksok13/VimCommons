@@ -1,0 +1,19 @@
+{
+    "name": "VimRope",
+    "rootNamespace": "",
+    "references": [
+        "GUID:090a698f1327a4874b85940ad70f9768",
+        "GUID:5174129eb4696480eb578253412ad25a",
+        "GUID:21d1eb854b91ade49bc69a263d12bee2",
+        "GUID:d8b63aba1907145bea998dd612889d6b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

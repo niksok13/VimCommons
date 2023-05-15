@@ -1,0 +1,17 @@
+{
+    "name": "VimAds",
+    "rootNamespace": "",
+    "references": [
+        "GUID:090a698f1327a4874b85940ad70f9768",
+        "GUID:a0acf38955309461896b0f091a47ca4e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace VimVibration.Runtime
+namespace VimVibration.Runtime.ServiceVibration
 {
     public enum HapticTypes { Selection, Success, Warning, Failure, LightImpact, MediumImpact, HeavyImpact }
     public class AndroidTaptic {

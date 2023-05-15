@@ -1,6 +1,6 @@
 using VimCore.Runtime.MVVM;
 
-namespace VimVibration.Runtime
+namespace VimVibration.Runtime.ServiceVibration
 {
     public interface IVibration
     {

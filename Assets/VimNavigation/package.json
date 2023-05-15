@@ -1,7 +1,7 @@
 {
-  "name": "com.vim.vibration",
-  "displayName": "VimVibration",
-  "description": "Vibration module",
+  "name": "com.vim.navigation",
+  "displayName": "VimNavigation",
+  "description": "Navigation module",
   "version": "1.0.0",
   "unity": "2021.3",
   "license": "MIT",

@@ -1,0 +1,18 @@
+{
+    "name": "VimQuestQueue",
+    "rootNamespace": "",
+    "references": [
+        "GUID:090a698f1327a4874b85940ad70f9768",
+        "GUID:6b6ff240f195542d59ab94ae1ee0d14c",
+        "GUID:00a1231c77f4c447ebb61e48463ab46a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

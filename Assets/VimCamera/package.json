@@ -1,6 +1,6 @@
 {
   "name": "com.vim.camera",
-  "displayName": "Camera",
+  "displayName": "VimCamera",
   "description": "Camera module",
   "version": "1.0.0",
   "unity": "2021.3",

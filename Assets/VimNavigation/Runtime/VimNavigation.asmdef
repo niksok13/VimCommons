@@ -1,0 +1,18 @@
+{
+    "name": "VimNavigation",
+    "rootNamespace": "",
+    "references": [
+        "GUID:090a698f1327a4874b85940ad70f9768",
+        "GUID:a0acf38955309461896b0f091a47ca4e",
+        "GUID:8c4dd21966739024fbd72155091d199e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

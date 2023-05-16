@@ -15,7 +15,7 @@ namespace VimLooting.Runtime.Inventory
         private void Awake() => Container.Attach(this);
         private void OnDestroy() => Container.Detach(this);
 
-        private Dictionary<int, int> _data = new();
+        private Dictionary<string, int> _data = new();
         public ObservableData<string> BalanceLabel { get; } = new();
 
         private void Start()
@@ -26,11 +26,11 @@ namespace VimLooting.Runtime.Inventory
                 BalanceLabel.Value = "0";
                 return;
             }
-            _data = JsonConvert.DeserializeObject<Dictionary<int, int>>(strBalance);
+            _data = JsonConvert.DeserializeObject<Dictionary<string, int>>(strBalance);
             BalanceUpdated();
         }
 
-        public int GetAmount(LootableDefinition type) => _data[type.GetHashCode()];
+        public int GetAmount(LootableDefinition type) => _data[type.guid];
         
         private void BalanceUpdated()
         {
@@ -48,7 +48,7 @@ namespace VimLooting.Runtime.Inventory
         {
             foreach (var entry in valueEstimate)
             {
-                var id = entry.type.GetHashCode();
+                var id = entry.type.guid;
                 if (!_data.ContainsKey(id))
                     _data[id] = 0;
                 if (_data[id] < entry.amount)
@@ -61,14 +61,14 @@ namespace VimLooting.Runtime.Inventory
         {
             if (!CanPay(valueEstimate)) return false;
             foreach (var entry in valueEstimate) 
-                _data[entry.type.GetHashCode()] -= entry.amount;
+                _data[entry.type.guid] -= entry.amount;
             BalanceUpdated();
             return true;
         }
 
         public void Receive(LootableDefinition type, int amount)
         {
-            var id = type.GetHashCode();
+            var id = type.guid;
             if (!_data.ContainsKey(id))
                 _data[id] = 0;
             _data[id] += amount;

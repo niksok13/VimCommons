@@ -7,7 +7,7 @@ using VimCore.Runtime.Utils;
 namespace VimLooting.Runtime.Core
 {
     [CreateAssetMenu]
-    public class LootableDefinition: ScriptableObject
+    public class LootableDefinition: ScriptableObjectWithGuid
     {
         public Lootable prefab;
         public Sprite icon;

@@ -5,7 +5,7 @@ using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
 using VimCore.Runtime.MVVM.ViewModels.Input;
 
-namespace VimBoosters.Runtime.BoosterCard
+namespace VimBoosters.Runtime.UICard
 {
     public class ModelBoosterCard : ModelBehaviour
     {

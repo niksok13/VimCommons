@@ -1,6 +1,6 @@
 using UnityEngine;
-using VimBoosters.Runtime.BoosterCard;
 using VimBoosters.Runtime.Core;
+using VimBoosters.Runtime.UICard;
 using VimCore.Runtime.DependencyManagement;
 
 namespace VimBoosters.Runtime.Runner

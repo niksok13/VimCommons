@@ -51,6 +51,6 @@ namespace VimAds.Runtime.Interstitial
 
         public void AddCooldown() => _timerDamage = damageTimeout;
 
-        public virtual void ShowInterstitial() { print("interstitial"); }
+        public virtual void ShowInterstitial() { }
     }
 }

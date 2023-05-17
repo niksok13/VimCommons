@@ -9,8 +9,6 @@ namespace VimAds.Runtime.Banner
         private void Awake() => Container.Attach(this);
         private void OnDestroy() => Container.Detach(this);
         
-        private bool _enabled;
-        public bool Enabled => _enabled;
-
+        public virtual bool Enabled { get; set; }
     }
 }

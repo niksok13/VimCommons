@@ -2,6 +2,6 @@ namespace VimAds.Runtime.Banner
 {
     public interface IBanner
     {
-        bool Enabled { get; }
+        bool Enabled { get; set; }
     }
 }

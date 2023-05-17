@@ -22,9 +22,9 @@ namespace VimNavigation.Runtime.Walker
         
         private Vector3 _moveDirection;
 
-        private void Awake() => LoopUtil.PostUpdate += Tick;
+        private void Awake() => LoopUtil.PostLateUpdate += Tick;
 
-        private void OnDestroy() => LoopUtil.PostUpdate -= Tick;
+        private void OnDestroy() => LoopUtil.PostLateUpdate -= Tick;
 
 
         public void Tick()

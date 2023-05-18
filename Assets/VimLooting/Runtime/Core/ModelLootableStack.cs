@@ -19,8 +19,6 @@ namespace VimLooting.Runtime.Core
         public LootableDefinition type;
         private static readonly Filter<ModelLootableStack> Filter = Locator.Filter<ModelLootableStack>();
 
-        private static ILevelLoader Loader => Locator.Resolve<ILevelLoader>();
-
         private void OnEnable() => Filter.Add(this);
         private void OnDisable() => Filter.Remove(this);
         
@@ -38,10 +36,14 @@ namespace VimLooting.Runtime.Core
         private void Awake()
         {
             Amount.OnValue += OnAmount;
-            Loader.OnUnload += OnUnload;
         }
 
-        private void OnDestroy() => Loader.OnUnload -= OnUnload;
+        private void OnDestroy()
+        {
+            foreach (var lootable in _stack) lootable.Remove();
+            _stack.Clear();
+            Amount.Value = 0;
+        }
 
         private void OnAmount(int obj)
         {
@@ -111,14 +113,5 @@ namespace VimLooting.Runtime.Core
             Amount.Value = 0;
         }
 
-        private void OnUnload()
-        {
-            foreach (var lootable in _stack)
-            {
-                lootable.Remove();
-            }
-            _stack.Clear();
-            Amount.Value = 0;
-        }
     }
 }

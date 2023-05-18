@@ -12,10 +12,7 @@ namespace VimStacking.Runtime.StackableUnloader
         private static readonly Filter<StackComponent> Stacks = Locator.Filter<StackComponent>();
         private static readonly Filter<ModelStackableConverter> Converters = Locator.Filter<ModelStackableConverter>();
         
-        private void Awake()
-        {
-            LevelLoader.OnUnload += OnUnload;
-        }
+        private void Awake() => LevelLoader.OnUnload += OnUnload;
 
         private void OnUnload()
         {

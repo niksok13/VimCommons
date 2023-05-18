@@ -12,14 +12,11 @@ namespace VimLooting.Runtime.LootableUnloader
         private static readonly Filter<Lootable> Lootables = Locator.Filter<Lootable>();
         public void Awake() => Loader.OnUnload += OnUnload;
 
-        private void OnDestroy() => Loader.OnUnload -= OnUnload;
 
         private static void OnUnload()
         {
-            foreach (var item in Lootables)
-            {
+            foreach (var item in Lootables) 
                 item.Remove();
-            }
         }
     }
 }

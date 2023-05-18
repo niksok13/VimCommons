@@ -1,31 +1,30 @@
-using UnityEngine;
 using UnityEngine.Purchasing;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
 using VimCore.Runtime.MVVM.ViewModels.Input;
-using VimPurchase.Runtime.ServiceIap;
+using VimPurchase.Runtime.ServicePurchase;
 
-namespace VimPurchase.Runtime.UIStore
+namespace VimPurchase.Runtime.IapProducts
 {
-    public class IapProductCard: ModelBehaviour
+    public class ModelProductCard: ModelBehaviour
     {
-        private static IIap Iap => Locator.Resolve<IIap>();
+        public ProductInfo productInfo;
+        
+        private static IPurchase Purchase => Locator.Resolve<IPurchase>();
 
         private ObservableData<string> Name { get; } = new();
         private ObservableData<string> Description { get; } = new();
         private ObservableData<string> FakePrice { get; } = new();
         private ObservableData<string> Price { get; } = new();
 
-
-        [SerializeField] private string productId;
-        
-        private void Start() => Iap.Products.OnValue += OnProductLoaded;
+        private void Start() => Purchase.ProductCollection.OnValue += OnProductLoaded;
+        private void OnDestroy() => Purchase.ProductCollection.OnValue -= OnProductLoaded;
 
         private void OnProductLoaded(ProductCollection productCollection)
         {
-            if (productCollection==null) return;
-            var product = productCollection.WithID(productId);
-            if (product==null) return;
+            if (productCollection == null) return;
+            var product = productCollection.WithID(productInfo.id);
+            if (product == null) return;
             Name.Value = product.metadata.localizedTitle;
             Description.Value = product.metadata.localizedDescription;
             var currencyCode = product.metadata.isoCurrencyCode;
@@ -34,6 +33,6 @@ namespace VimPurchase.Runtime.UIStore
             FakePrice.Value = $"{cost * 10 / 4} {currencyCode}";
         }
 
-        private void BtnPurchase(SignalClick _) => Iap.Purchase(productId);
+        private void BtnPurchase(SignalClick _) => Purchase.Purchase(productInfo);
     }
 }

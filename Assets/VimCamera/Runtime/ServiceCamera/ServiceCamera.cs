@@ -1,6 +1,6 @@
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.EZTween;
 using VimCore.Runtime.Utils;
 
 namespace VimCamera.Runtime.ServiceCamera
@@ -12,8 +12,8 @@ namespace VimCamera.Runtime.ServiceCamera
         private Transform _transform;
         public Transform Transform => _transform ??= transform;
         
-        private UnityEngine.Camera _camera;
-        public UnityEngine.Camera Camera => _camera ??= GetComponent<UnityEngine.Camera>();
+        private Camera _camera;
+        public Camera Camera => _camera ??= GetComponent<Camera>();
         
         private CameraState _state;
         private CameraState _tempState;
@@ -36,11 +36,14 @@ namespace VimCamera.Runtime.ServiceCamera
             State.Track(this);
         }
 
-        public async void Look(CameraState cameraState)
+        public void Look(CameraState cameraState)
         {
             _tempState = cameraState;
-            await UniTask.Delay(1500, DelayType.UnscaledDeltaTime);
-            _tempState = null;
+            EZ.Spawn().Delay(1.5f).Call(_ =>
+            {
+                _tempState = null;
+            });
+            
         }
 
         public void Focus(CameraState cameraState) => _state = cameraState;

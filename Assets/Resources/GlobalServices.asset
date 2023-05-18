@@ -15,7 +15,8 @@ MonoBehaviour:
   gameCore: {fileID: 7380639530063581379, guid: 77483a7f92b8444fc872c74411cea9fd, type: 3}
   globalServices:
   - {fileID: 3073976509009177742, guid: d2566bda8012f46c29c89906b7d44cc8, type: 3}
+  - {fileID: 4861105011189457770, guid: cd2f7bcdbde384b8093e172ae887a062, type: 3}
   - {fileID: 540572438756107497, guid: 40ca76dd9bcc34d4c9e148f3c0e6c7a2, type: 3}
   - {fileID: 3394908755192424019, guid: 8789ff24f0b8f42c199809cb6d63655a, type: 3}
   - {fileID: 8993362936723575429, guid: ad5c85c26d44c46449c98c1ed95a4a28, type: 3}
-  - {fileID: 4861105011189457770, guid: cd2f7bcdbde384b8093e172ae887a062, type: 3}
+  - {fileID: 2433213024093236356, guid: 0aab1ed94f5a54f77bffe853edb3fd0f, type: 3}

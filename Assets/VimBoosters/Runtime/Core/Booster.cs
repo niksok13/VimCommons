@@ -1,5 +1,6 @@
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
 using VimCore.Runtime.Utils;
 
 namespace VimBoosters.Runtime.Core
@@ -16,6 +17,7 @@ namespace VimBoosters.Runtime.Core
         
         public float Estimate { get; private set; }
         public bool Active => Estimate > 0;
+        public ObservableData<bool> Observable { get; } = new();
 
         public void AddSeconds(float seconds)
         {
@@ -24,8 +26,8 @@ namespace VimBoosters.Runtime.Core
 
         public void Tick()
         {
-            if (Estimate > 0)
-                Estimate -= Time.deltaTime;
+            Estimate -= Time.deltaTime;
+            Observable.Value = Estimate > 0;
         }
     }
 }

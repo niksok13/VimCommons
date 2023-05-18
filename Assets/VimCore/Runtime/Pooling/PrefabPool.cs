@@ -25,8 +25,8 @@ namespace VimCore.Runtime.Pooling
             if (!string.IsNullOrWhiteSpace(prefab.gameObject.scene.path)) 
                 throw new Exception("Couldn't use scene object as poolable prefab");
 
-            if (Pools.ContainsKey(prefab))
-                return Pools[prefab];
+            if (Pools.TryGetValue(prefab,out var pool))
+                return pool;
             
             var result = new PrefabPool<T>(prefab);
             Pools[prefab] = result;

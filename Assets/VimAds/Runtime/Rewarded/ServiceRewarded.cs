@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using VimAds.Runtime.Interstitial;
+using VimAds.Runtime.InterstitialRunner;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
 
@@ -12,14 +12,16 @@ namespace VimAds.Runtime.Rewarded
         private void Awake() => Container.Attach(this);
         private void OnDestroy() => Container.Detach(this);
         
-        private static IInterstitial Interstitial => Locator.Resolve<IInterstitial>();
+        private static IInterstitialRunner Interstitial => Locator.Resolve<IInterstitialRunner>();
         
-        private Action _rewardedCallback;
-
         public ObservableData<bool> Ready { get; } = new();
         
-        public virtual void Show(Action callback) => callback.Invoke();
-        
-        private void UpdateLastAd() => Interstitial?.UpdateLastAd();
+        public virtual void Show(Action callback)
+        {
+            UpdateLastAd();
+            callback.Invoke();
+        }
+
+        protected void UpdateLastAd() => Interstitial?.UpdateLastAd();
     }
 }

@@ -10,10 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7022626481604910167}
   - component: {fileID: -6578542190009140561}
-  - component: {fileID: 7508232080459611823}
-  - component: {fileID: 1427891744323124966}
   m_Layer: 0
-  m_Name: Ads
+  m_Name: Rewarded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,28 +44,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b520821ed848da80b312f8e8e14c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7508232080459611823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3073976509009177742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6877d3f854ad46388045f11ce8040e8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1427891744323124966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3073976509009177742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da170fe98e37410f8dff601b7a410b6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartQuest: 0

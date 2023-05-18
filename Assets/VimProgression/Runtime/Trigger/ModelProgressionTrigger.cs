@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
-using VimAds.Runtime.Interstitial;
+using VimAds.Runtime.InterstitialRunner;
 using VimAds.Runtime.Rewarded;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
@@ -30,7 +30,7 @@ namespace VimProgression.Runtime.Trigger
         private void OnEnable() => Filter.Add(this);
         private void OnDisable() => Filter.Remove(this);
         
-        private static IInterstitial Interstitial => Locator.Resolve<IInterstitial>();
+        private static IInterstitialRunner Interstitial => Locator.Resolve<IInterstitialRunner>();
         private static ILootAnimations LootAnimations => Locator.Resolve<ILootAnimations>();
         private static IRewarded Rewarded => Locator.Resolve<IRewarded>();
         private static IInventory Inventory => Locator.Resolve<IInventory>();

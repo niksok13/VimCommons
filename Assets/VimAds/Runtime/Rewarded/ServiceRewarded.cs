@@ -1,11 +1,12 @@
 using System;
+using UnityEngine;
 using VimAds.Runtime.Interstitial;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
 
 namespace VimAds.Runtime.Rewarded
 {
-    public class ServiceRewarded : ModelBehaviour, IRewarded
+    public class ServiceRewarded : MonoBehaviour, IRewarded
     {
         private static readonly ServiceContainer<IRewarded> Container = Locator.Single<IRewarded>();
         private void Awake() => Container.Attach(this);

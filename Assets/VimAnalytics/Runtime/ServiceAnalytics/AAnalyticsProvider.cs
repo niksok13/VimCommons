@@ -8,7 +8,6 @@ namespace VimAnalytics.Runtime.ServiceAnalytics
         private static readonly Filter<AAnalyticsProvider> Filter = Locator.Filter<AAnalyticsProvider>();
         private void OnEnable() => Filter.Add(this);
         private void OnDestroy() => Filter.Remove(this);
-        
-        public abstract void QuestCompleted(int step, string title);
+        public abstract void Send<T>(T payload);
     }
 }

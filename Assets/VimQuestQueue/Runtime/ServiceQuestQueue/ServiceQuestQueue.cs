@@ -100,7 +100,7 @@ namespace VimQuestQueue.Runtime.ServiceQuestQueue
         {
             UIQuestQueue.Visible.Value = false;
             _current.Exit();
-            Analytics.QuestCompleted(QuestProgress.Value, _current.name);
+            Analytics.Send(new EventQuestCompleted(QuestProgress.Value, _current.name));
             QuestProgress.Value += 1;
             _current = null;
             if (auto)

@@ -10,12 +10,12 @@ namespace VimAnalytics.Runtime.ServiceAnalytics
         private static readonly ServiceContainer<IAnalytics> Container = Locator.Single<IAnalytics>();
         private void Awake() => Container.Attach(this);
         private void OnDestroy() => Container.Detach(this);
-
-
-        public void QuestCompleted(int step, string title)
+        
+        public void Send<T>(T payload)
         {
             foreach (var provider in Providers) 
-                provider.QuestCompleted(step, title);
+                provider.Send(payload);
         }
     }
+
 }

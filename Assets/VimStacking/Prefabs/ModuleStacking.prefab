@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6380159694076919468}
   - component: {fileID: -2265199904573070145}
-  - component: {fileID: 8275686201423096388}
   m_Layer: 0
   m_Name: ModuleStacking
   m_TagString: Untagged
@@ -43,17 +42,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48c083a984324bf1a6b06cd12419d441, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8275686201423096388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042828452374989151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6de3a17cedc043049f65824a89e4ac75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

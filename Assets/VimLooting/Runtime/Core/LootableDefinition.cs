@@ -13,7 +13,8 @@ namespace VimLooting.Runtime.Core
         public Sprite icon;
         public string iconLabel;
         
-        private static readonly Filter<Lootable> Lootables = Locator.Filter<Lootable>();
+        private static readonly Filter<Lootable> Filter = Locator.Filter<Lootable>();
+
         private PrefabPool<Lootable> _pool;
         public PrefabPool<Lootable> Pool => _pool ??= PrefabPool<Lootable>.Instance(prefab);
         
@@ -34,10 +35,20 @@ namespace VimLooting.Runtime.Core
                 result.Transform.localPosition = Helper.LerpParabolic(posFrom, posTo, ez.Linear, 2);
                 result.Transform.localScale = Vector3.one * ez.BackOut;
             }).Call(_ => {
-                Lootables.Add(result);
+                Filter.Add(result);
             });
         }
 
-        public void Remove(Lootable lootable) => Pool.Remove(lootable);
+        public void Remove(Lootable lootable, Transform target)
+        {
+            Filter.Remove(lootable);
+            var from = lootable.Transform.position;
+            EZ.Spawn().Tween(ez => {
+                lootable.Transform.localScale = Vector3.one*(1-ez.BackOut);
+                lootable.Transform.position = Helper.LerpParabolic(from, target.position + Vector3.up, ez.Linear);
+            }).Call(_ =>  {
+                Pool.Remove(lootable);
+            });
+        }
     }
 }

@@ -22,12 +22,8 @@ namespace VimLooting.Runtime.Core
             Transform.rotation = Quaternion.identity;
         }
 
-        public void Remove()
-        {
-            Filter.Remove(this);
-            Definition.Remove(this);
-        }
-        
+        public void Remove() => Definition.Remove(this, Transform);
+
 
         public void Tick(LooterComponent looter)
         {
@@ -37,15 +33,8 @@ namespace VimLooting.Runtime.Core
         
         private void Loot(LooterComponent looter)
         {
-            Filter.Remove(this);
-            var from = Transform.position;
-            EZ.Spawn().Tween( ez => {
-                Transform.localScale = Vector3.one*ez.BackOut;
-                Transform.position = Helper.LerpParabolic(from, looter.Transform.position+Vector3.up, ez.Linear);
-            }).Call(_ =>  {
-                looter.Loot(Definition);
-                Definition.Remove(this);
-            });
+            looter.Loot(Definition);
+            Definition.Remove(this, looter.transform);
         }
     }
 }

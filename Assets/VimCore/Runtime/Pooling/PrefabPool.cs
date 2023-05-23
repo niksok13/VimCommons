@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using Object = UnityEngine.Object;
 
 namespace VimCore.Runtime.Pooling
@@ -11,14 +12,11 @@ namespace VimCore.Runtime.Pooling
         private readonly Stack<T> _pool = new();
 
         private GameObject _holder;
-        private GameObject Holder
+        private void CheckHolder()
         {
-            get
-            {
-                if (Equals(_holder, null))
-                    _holder = new GameObject($"PrefabPool<{_prototype.name}>");
-                return _holder;
-            }
+            if (_holder) return;
+            _holder = new GameObject($"PrefabPool<{_prototype.name}>");
+            _pool.Clear();
         }
 
         private static readonly Dictionary<T, PrefabPool<T>> Pools = new();
@@ -27,12 +25,9 @@ namespace VimCore.Runtime.Pooling
 
         public static PrefabPool<T> Instance(T prefab)
         {
-            if (!string.IsNullOrWhiteSpace(prefab.gameObject.scene.path)) 
-                throw new Exception("Couldn't use scene object as poolable prefab");
+            Assert.IsTrue(string.IsNullOrWhiteSpace(prefab.gameObject.scene.path), "Couldn't use scene object as poolable prefab");
 
-            if (Pools.TryGetValue(prefab,out var pool))
-                return pool;
-            
+            if (Pools.TryGetValue(prefab, out var pool)) return pool;
             var result = new PrefabPool<T>(prefab);
             Pools[prefab] = result;
             return result;
@@ -40,8 +35,9 @@ namespace VimCore.Runtime.Pooling
         
         public T Spawn()
         {
+            CheckHolder();
             if (_pool.Count < 1) 
-                return Object.Instantiate(_prototype, Holder.transform);
+                return Object.Instantiate(_prototype, _holder.transform);
             var result = _pool.Pop();
             result.gameObject.SetActive(true);
             return result;
@@ -49,9 +45,9 @@ namespace VimCore.Runtime.Pooling
 
         public void Remove(T item)
         {
-            if (Equals(item, null)) return;
-            if (item.transform.parent != Holder.transform)
-                throw new Exception("Couldn't remove reparented objects");
+            CheckHolder();
+            Assert.IsNotNull(item, "Null passed");
+            Assert.IsTrue(item.transform.parent == _holder.transform, "Couldn't remove reparented objects");
             item.gameObject.SetActive(false);
             _pool.Push(item);
         }

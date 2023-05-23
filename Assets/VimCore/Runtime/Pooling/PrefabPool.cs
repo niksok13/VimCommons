@@ -11,7 +11,15 @@ namespace VimCore.Runtime.Pooling
         private readonly Stack<T> _pool = new();
 
         private GameObject _holder;
-        private GameObject Holder => _holder ??=  new GameObject($"PrefabPool<{_prototype.name}>");
+        private GameObject Holder
+        {
+            get
+            {
+                if (Equals(_holder, null))
+                    _holder = new GameObject($"PrefabPool<{_prototype.name}>");
+                return _holder;
+            }
+        }
 
         private static readonly Dictionary<T, PrefabPool<T>> Pools = new();
 

@@ -25,7 +25,7 @@ namespace VimCore.Runtime.Pooling
 
         public static PrefabPool<T> Instance(T prefab)
         {
-            Assert.IsTrue(string.IsNullOrWhiteSpace(prefab.gameObject.scene.path), "Couldn't use scene object as poolable prefab");
+            Assert.IsTrue(prefab.GetInstanceID() > 0, "Couldn't use instance object as pool prototype");
 
             if (Pools.TryGetValue(prefab, out var pool)) return pool;
             var result = new PrefabPool<T>(prefab);
@@ -45,9 +45,9 @@ namespace VimCore.Runtime.Pooling
 
         public void Remove(T item)
         {
-            CheckHolder();
-            Assert.IsNotNull(item, "Null passed");
+            Assert.IsNotNull(item, "Trying to pool null object. Ignoring.");
             Assert.IsTrue(item.transform.parent == _holder.transform, "Couldn't remove reparented objects");
+            CheckHolder();
             item.gameObject.SetActive(false);
             _pool.Push(item);
         }

@@ -1,10 +1,13 @@
 {
-    "name": "VimLooting",
+    "name": "CommonQuests",
     "rootNamespace": "",
     "references": [
-        "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:090a698f1327a4874b85940ad70f9768",
-        "GUID:607fb446e5549422397a8797a101254d"
+        "GUID:5174129eb4696480eb578253412ad25a",
+        "GUID:aa4058dcf7167417d87db96b2bd517a9",
+        "GUID:2159e00e026ae46fcbaec8806a4b4780",
+        "GUID:de31c47b8d2ec4e1d9323306fd7ec4a7",
+        "GUID:c8414b5ba19f8468abc562d38931f936"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

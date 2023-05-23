@@ -3,9 +3,9 @@ using VimCore.Runtime.MVVM;
 using VimCore.Runtime.MVVM.ViewModels.Input;
 using VimRoulette.Runtime.Roulette;
 
-namespace Core
+namespace Test
 {
-    public class ModelCore : ModelBehaviour
+    public class ModelTest : ModelBehaviour
     {
         private static IRoulette Roulette => Locator.Resolve<IRoulette>();
 

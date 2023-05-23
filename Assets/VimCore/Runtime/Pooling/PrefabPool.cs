@@ -9,16 +9,13 @@ namespace VimCore.Runtime.Pooling
     {
         private readonly T _prototype;
         private readonly Stack<T> _pool = new();
-        private readonly GameObject _poolHolder;
+
+        private GameObject _holder;
+        private GameObject Holder => _holder ??=  new GameObject($"PrefabPool<{_prototype.name}>");
 
         private static readonly Dictionary<T, PrefabPool<T>> Pools = new();
 
-        private PrefabPool(T prefab)
-        {
-            _prototype = prefab;
-            _poolHolder = new GameObject($"PrefabPool<{prefab.name}>");
-            Object.DontDestroyOnLoad(_poolHolder);
-        }
+        private PrefabPool(T prefab) => _prototype = prefab;
 
         public static PrefabPool<T> Instance(T prefab)
         {
@@ -35,8 +32,8 @@ namespace VimCore.Runtime.Pooling
         
         public T Spawn()
         {
-            if (_pool.Count<1) 
-                return Object.Instantiate(_prototype, _poolHolder.transform);
+            if (_pool.Count < 1) 
+                return Object.Instantiate(_prototype, Holder.transform);
             var result = _pool.Pop();
             result.gameObject.SetActive(true);
             return result;
@@ -45,7 +42,7 @@ namespace VimCore.Runtime.Pooling
         public void Remove(T item)
         {
             if (Equals(item, null)) return;
-            if (item.transform.parent!=_poolHolder.transform)
+            if (item.transform.parent != Holder.transform)
                 throw new Exception("Couldn't remove reparented objects");
             item.gameObject.SetActive(false);
             _pool.Push(item);

@@ -11,7 +11,6 @@ namespace VimSceneManagement.Runtime.ServiceLevelLoader
     {
         private static readonly ServiceContainer<ILevelLoader> Container = Locator.Single<ILevelLoader>();
 
-        public event Action OnUnload;
 
         private int _levelCount;
 
@@ -40,7 +39,6 @@ namespace VimSceneManagement.Runtime.ServiceLevelLoader
 
         public async Task Unload()
         {
-            OnUnload?.Invoke();
             var loading = SceneManager.LoadSceneAsync(0);
             while (!loading.isDone) 
                 await UniTask.Delay(100, DelayType.UnscaledDeltaTime);

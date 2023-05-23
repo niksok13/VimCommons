@@ -5,7 +5,6 @@ using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.EZTween;
 using VimCore.Runtime.MVVM;
 using VimCore.Runtime.Utils;
-using VimSceneManagement.Runtime.ServiceLevelLoader;
 using Random = UnityEngine.Random;
 
 namespace VimLooting.Runtime.Core

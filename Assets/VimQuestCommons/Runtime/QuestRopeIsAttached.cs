@@ -1,6 +1,7 @@
 using VimQuestQueue.Runtime.ServiceQuestQueue;
+using VimRope.Runtime.JointRope;
 
-namespace VimRope.Runtime.JointRope
+namespace VimQuestCommons.Runtime
 {
     public class QuestRopeIsAttached : AQuest
     {

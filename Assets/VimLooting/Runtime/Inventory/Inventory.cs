@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.EZTween;
 using VimCore.Runtime.MVVM;
 using VimLooting.Runtime.Core;
 
@@ -16,10 +17,12 @@ namespace VimLooting.Runtime.Inventory
         private void OnDestroy() => Container.Detach(this);
 
         private Dictionary<string, int> _data = new();
+        private EZ _ez;
         public ObservableData<string> BalanceLabel { get; } = new();
 
         private void Start()
         {
+            _ez = EZ.Spawn();
             var strBalance = PlayerPrefs.GetString(Key, "");
             if (strBalance.Length < 1)
             {
@@ -34,14 +37,19 @@ namespace VimLooting.Runtime.Inventory
         
         private void BalanceUpdated()
         {
-            var strBalance = JsonConvert.SerializeObject(_data);
-            PlayerPrefs.SetString(Key, strBalance);
-            PlayerPrefs.Save();
+            _ez.Clear();
+            _ez.Delay().Call(SaveBalance);
             var result = "";
             foreach (var entry in _data) 
                 result += $"{entry.Value}";
-
             BalanceLabel.Value = result;
+        }
+
+        private void SaveBalance(EZData obj)
+        {
+            var strBalance = JsonConvert.SerializeObject(_data);
+            PlayerPrefs.SetString(Key, strBalance);
+            PlayerPrefs.Save();
         }
 
         public bool CanPay(List<LootEntry> valueEstimate)

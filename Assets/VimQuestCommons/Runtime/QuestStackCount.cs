@@ -1,7 +1,8 @@
 using VimQuestQueue.Runtime.ServiceQuestQueue;
+using VimStacking.Runtime;
 using VimStacking.Runtime.Stackable;
 
-namespace VimStacking.Runtime
+namespace VimQuestCommons.Runtime
 {
     public class QuestStackCount : AQuestCount
     {

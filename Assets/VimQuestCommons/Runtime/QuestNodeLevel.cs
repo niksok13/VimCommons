@@ -1,6 +1,7 @@
+using VimProgression.Runtime.Node;
 using VimQuestQueue.Runtime.ServiceQuestQueue;
 
-namespace VimProgression.Runtime.Node
+namespace VimQuestCommons.Runtime
 {
     public class QuestNodeLevel: AQuestCount
     {

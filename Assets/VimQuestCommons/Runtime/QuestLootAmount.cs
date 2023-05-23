@@ -1,8 +1,9 @@
 using VimCore.Runtime.DependencyManagement;
 using VimLooting.Runtime.Core;
+using VimLooting.Runtime.Inventory;
 using VimQuestQueue.Runtime.ServiceQuestQueue;
 
-namespace VimLooting.Runtime.Inventory
+namespace VimQuestCommons.Runtime
 {
     public class QuestLootAmount: AQuestCount
     {

@@ -3,7 +3,7 @@ using VimCore.Runtime.MVVM;
 using VimCore.Runtime.MVVM.ViewModels.Input;
 using VimRoulette.Runtime.Roulette;
 
-namespace Test
+namespace Test.Core
 {
     public class ModelTest : ModelBehaviour
     {

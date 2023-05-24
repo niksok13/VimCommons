@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Core.Runtime.DependencyManagement
+namespace VimCore.Runtime.DependencyManagement
 {
     [CreateAssetMenu(menuName = "Create GlobalServices", fileName = "GlobalServices", order = 0)]
     public class GlobalServices : ScriptableObject

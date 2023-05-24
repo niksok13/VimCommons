@@ -1,4 +1,4 @@
-namespace Core.Runtime.MVVM.ViewModels
+namespace VimCore.Runtime.MVVM.ViewModels
 {
     public enum ComparsionMode { Exact, Min, Max }
 }

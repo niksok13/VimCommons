@@ -1,7 +1,7 @@
-using Core.Runtime.DependencyManagement;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.QuestQueue.Runtime.ServiceQuestQueue
+namespace VimCommons.QuestQueue.Runtime.ServiceQuestQueue
 {
     public class QuestConditionalObject: MonoBehaviour
     {

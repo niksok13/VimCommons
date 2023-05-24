@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Commons.Transients.Runtime.TransientLabels
+namespace VimCommons.Transients.Runtime.TransientLabels
 {
     public interface ITransientLabelSystem
     {

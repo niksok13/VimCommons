@@ -1,4 +1,4 @@
-namespace Commons.Input.Runtime.InputTouch
+namespace VimCommons.Input.Runtime.InputTouch
 {
     public interface IClickable
     {

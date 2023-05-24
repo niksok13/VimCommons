@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Commons.Roulette.Runtime.Reward
+namespace VimCommons.Roulette.Runtime.Reward
 {
     [CreateAssetMenu]
     public class RouletteReward: ScriptableObject

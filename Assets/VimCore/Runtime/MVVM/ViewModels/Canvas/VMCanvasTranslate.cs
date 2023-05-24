@@ -1,7 +1,7 @@
-using Core.Runtime.EZTween;
 using UnityEngine;
+using VimCore.Runtime.EZTween;
 
-namespace Core.Runtime.MVVM.ViewModels.Canvas
+namespace VimCore.Runtime.MVVM.ViewModels.Canvas
 {
     public class VMCanvasTranslate : VMCanvas
     {

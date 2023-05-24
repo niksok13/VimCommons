@@ -1,6 +1,6 @@
 using System;
 
-namespace Commons.Looting.Runtime.Core
+namespace VimCommons.Looting.Runtime.Core
 {
     [Serializable]
     public class LootEntry

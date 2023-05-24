@@ -1,6 +1,6 @@
-using Core.Runtime.EZTween;
+using VimCore.Runtime.EZTween;
 
-namespace Core.Runtime.MVVM.ViewModels.Slider
+namespace VimCore.Runtime.MVVM.ViewModels.Slider
 {
     public class VMBindSlider: ASignalEmitter<SignalSlider, UnityEngine.UI.Slider>
     {

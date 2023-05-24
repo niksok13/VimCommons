@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Commons.Stacking.Runtime.Stackable;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.EZTween;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCommons.Stacking.Runtime.Stackable;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.EZTween;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Stacking.Runtime
+namespace VimCommons.Stacking.Runtime
 {
     public class StackComponent: MonoBehaviour
     {

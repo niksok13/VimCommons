@@ -1,16 +1,16 @@
 using System.Linq;
-using Commons.Ads.Runtime.InterstitialRunner;
-using Commons.Ads.Runtime.Rewarded;
-using Commons.Looting.Runtime.Animations;
-using Commons.Looting.Runtime.Core;
-using Commons.Looting.Runtime.Inventory;
-using Commons.Progression.Runtime.Node;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
 using UnityEngine;
 using UnityEngine.Serialization;
+using VimCommons.Ads.Runtime.InterstitialRunner;
+using VimCommons.Ads.Runtime.Rewarded;
+using VimCommons.Looting.Runtime.Animations;
+using VimCommons.Looting.Runtime.Core;
+using VimCommons.Looting.Runtime.Inventory;
+using VimCommons.Progression.Runtime.Node;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Progression.Runtime.Trigger
+namespace VimCommons.Progression.Runtime.Trigger
 {
     
     public class ModelProgressionTrigger : ModelBehaviour

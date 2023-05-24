@@ -1,6 +1,6 @@
 using System;
 
-namespace Core.Runtime.MVVM
+namespace VimCore.Runtime.MVVM
 {
     public class ObservableChannel
     {

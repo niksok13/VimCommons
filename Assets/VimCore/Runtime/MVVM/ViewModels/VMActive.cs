@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Core.Runtime.MVVM.ViewModels
+namespace VimCore.Runtime.MVVM.ViewModels
 {
     public class VMActive : AViewModel<bool,Transform>
     {

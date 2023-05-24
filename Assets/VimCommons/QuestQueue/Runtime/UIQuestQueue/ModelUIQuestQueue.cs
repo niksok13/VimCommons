@@ -1,10 +1,10 @@
-using Commons.QuestQueue.Runtime.ServiceQuestQueue;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
-using Core.Runtime.MVVM.ViewModels.Input;
 using UnityEngine;
+using VimCommons.QuestQueue.Runtime.ServiceQuestQueue;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.MVVM.ViewModels.Input;
 
-namespace Commons.QuestQueue.Runtime.UIQuestQueue
+namespace VimCommons.QuestQueue.Runtime.UIQuestQueue
 {
     public class ModelUIQuestQueue : ModelBehaviour, IUIQuestQueue
     {

@@ -1,8 +1,8 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
-using Core.Runtime.MVVM.ViewModels.Input;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.MVVM.ViewModels.Input;
 
-namespace Commons.Purchase.Runtime.UIStore
+namespace VimCommons.Purchase.Runtime.UIStore
 {
     public class ModelUIStore : ModelBehaviour, IUIStore
     {

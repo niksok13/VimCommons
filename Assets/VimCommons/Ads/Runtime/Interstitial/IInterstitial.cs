@@ -1,4 +1,4 @@
-namespace Commons.Ads.Runtime.Interstitial
+namespace VimCommons.Ads.Runtime.Interstitial
 {
     public interface IInterstitial
     {

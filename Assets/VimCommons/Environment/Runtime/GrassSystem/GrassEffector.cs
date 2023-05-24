@@ -1,7 +1,7 @@
-using Core.Runtime.DependencyManagement;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.Environment.Runtime.GrassSystem
+namespace VimCommons.Environment.Runtime.GrassSystem
 {
     public class GrassEffector : MonoBehaviour
     {

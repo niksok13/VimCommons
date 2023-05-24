@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
-using Core.Runtime.EZTween;
 using UnityEngine;
 using UnityEngine.Splines;
+using VimCore.Runtime.EZTween;
 
-namespace Commons.Rope.Runtime.JointRope
+namespace VimCommons.Rope.Runtime.JointRope
 {
     public class ModelJointRope : MonoBehaviour
     {

@@ -1,11 +1,11 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Pooling;
-using Core.Runtime.Utils;
 using UnityEngine;
 using UnityEngine.Splines;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Pooling;
+using VimCore.Runtime.Utils;
 using Random = UnityEngine.Random;
 
-namespace Commons.Environment.Runtime.NpcCarSystem
+namespace VimCommons.Environment.Runtime.NpcCarSystem
 {
     public class ServiceNpcCarSystem : MonoBehaviour
     {

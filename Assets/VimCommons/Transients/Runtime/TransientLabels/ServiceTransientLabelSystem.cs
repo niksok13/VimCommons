@@ -1,11 +1,11 @@
-using Commons.Camera.Runtime.ServiceCamera;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.EZTween;
-using Core.Runtime.Pooling;
 using TMPro;
 using UnityEngine;
+using VimCommons.Camera.Runtime.ServiceCamera;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.EZTween;
+using VimCore.Runtime.Pooling;
 
-namespace Commons.Transients.Runtime.TransientLabels
+namespace VimCommons.Transients.Runtime.TransientLabels
 {
     public class ServiceTransientLabelSystem : MonoBehaviour, ITransientLabelSystem
     {

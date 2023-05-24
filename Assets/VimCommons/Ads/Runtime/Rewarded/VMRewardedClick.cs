@@ -1,10 +1,10 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
-using Core.Runtime.MVVM.ViewModels.Input;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.MVVM.ViewModels.Input;
 
-namespace Commons.Ads.Runtime.Rewarded
+namespace VimCommons.Ads.Runtime.Rewarded
 {
     public class VMRewardedClick :
         ASignalEmitter<SignalClick, CanvasRenderer>,

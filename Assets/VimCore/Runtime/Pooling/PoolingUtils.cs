@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Core.Runtime.Pooling
+namespace VimCore.Runtime.Pooling
 {
     public static class PoolingUtils
     {

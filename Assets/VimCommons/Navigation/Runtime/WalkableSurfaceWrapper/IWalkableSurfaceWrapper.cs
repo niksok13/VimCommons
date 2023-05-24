@@ -1,4 +1,4 @@
-namespace Commons.Navigation.Runtime.WalkableSurfaceWrapper
+namespace VimCommons.Navigation.Runtime.WalkableSurfaceWrapper
 {
     public interface IWalkableSurfaceWrapper
     {

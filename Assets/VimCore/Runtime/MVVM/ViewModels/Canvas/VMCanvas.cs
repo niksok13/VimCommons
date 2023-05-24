@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Core.Runtime.MVVM.ViewModels.Canvas
+namespace VimCore.Runtime.MVVM.ViewModels.Canvas
 {
     
     public class VMCanvas : AViewModel<bool,UnityEngine.Canvas>

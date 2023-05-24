@@ -1,7 +1,7 @@
-using Core.Runtime.MVVM;
 using UnityEngine;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Camera.Runtime.ServiceCamera
+namespace VimCommons.Camera.Runtime.ServiceCamera
 {
     public class VMCameraLayerMask : AViewModel<bool,UnityEngine.Camera>
     {

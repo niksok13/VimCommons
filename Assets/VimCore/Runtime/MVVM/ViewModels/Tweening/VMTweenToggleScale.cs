@@ -1,7 +1,7 @@
-using Core.Runtime.EZTween;
 using UnityEngine;
+using VimCore.Runtime.EZTween;
 
-namespace Core.Runtime.MVVM.ViewModels.Tweening
+namespace VimCore.Runtime.MVVM.ViewModels.Tweening
 {
     public class VMTweenToggleScale: AViewModel<bool, GameObject>
     {

@@ -1,9 +1,9 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Utils;
 using UnityEditor;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Camera.Runtime.ServiceCamera
+namespace VimCommons.Camera.Runtime.ServiceCamera
 {
     public class CameraState : MonoBehaviour
     {

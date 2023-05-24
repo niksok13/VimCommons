@@ -1,7 +1,7 @@
-using Core.Runtime.MVVM;
 using UnityEngine;
+using VimCore.Runtime.MVVM;
 
-namespace Core.Runtime.Utils.RadialFill
+namespace VimCore.Runtime.Utils.RadialFill
 {
     public class VMSpriteFill : AViewModel<float, SpriteRenderer>
     {

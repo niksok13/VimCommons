@@ -1,4 +1,4 @@
-namespace Commons.Purchase.Runtime.UIStore
+namespace VimCommons.Purchase.Runtime.UIStore
 {
     public interface IUIStore
     {

@@ -1,6 +1,6 @@
-using Core.Runtime.MVVM;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Vibration.Runtime.ServiceVibration
+namespace VimCommons.Vibration.Runtime.ServiceVibration
 {
     public interface IVibration
     {

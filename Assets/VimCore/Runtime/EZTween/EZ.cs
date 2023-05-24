@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Core.Runtime.EZTween
+namespace VimCore.Runtime.EZTween
 {
     public class EZ
     {

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using Commons.Rope.Runtime.JointRope;
-using Core.Runtime.DependencyManagement;
 using UnityEngine;
+using VimCommons.Rope.Runtime.JointRope;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.Rope.Runtime.RopeHolder
+namespace VimCommons.Rope.Runtime.RopeHolder
 {
     public class RopeHolderComponent : MonoBehaviour
     {

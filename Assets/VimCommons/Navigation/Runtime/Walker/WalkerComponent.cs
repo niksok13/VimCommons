@@ -1,10 +1,10 @@
-using Commons.Input.Runtime.InputTouch;
-using Core.Runtime.MVVM;
-using Core.Runtime.Utils;
 using UnityEngine;
 using UnityEngine.AI;
+using VimCommons.Input.Runtime.InputTouch;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Navigation.Runtime.Walker
+namespace VimCommons.Navigation.Runtime.Walker
 {
     public class WalkerComponent: MonoBehaviour
     {

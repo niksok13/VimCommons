@@ -1,9 +1,9 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Progression.Runtime.Trigger
+namespace VimCommons.Progression.Runtime.Trigger
 {
     public class ProgressionTriggerInvoker : MonoBehaviour
     {

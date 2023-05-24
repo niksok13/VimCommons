@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Core.Runtime.DependencyManagement;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.Triggers.Runtime.TriggerSystem
+namespace VimCommons.Triggers.Runtime.TriggerSystem
 {
     public class TriggerInvoker: MonoBehaviour
     {

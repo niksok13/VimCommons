@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Core.Runtime.EZTween
+namespace VimCore.Runtime.EZTween
 {
     internal static class EZStepPool
     {

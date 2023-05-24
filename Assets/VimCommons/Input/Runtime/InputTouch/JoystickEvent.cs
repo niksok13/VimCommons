@@ -1,6 +1,6 @@
 using System;
 
-namespace Commons.Input.Runtime.InputTouch
+namespace VimCommons.Input.Runtime.InputTouch
 {
     [Serializable]
     public enum JoystickEvent

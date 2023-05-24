@@ -1,4 +1,4 @@
-namespace Core.Runtime.MVVM
+namespace VimCore.Runtime.MVVM
 {
     public class ObservableBalance: ObservableData<int>
     {

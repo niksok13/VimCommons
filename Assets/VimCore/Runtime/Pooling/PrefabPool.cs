@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using Object = UnityEngine.Object;
 
-namespace Core.Runtime.Pooling
+namespace VimCore.Runtime.Pooling
 {
     public class PrefabPool<T> where T: Component
     {

@@ -1,10 +1,10 @@
-using Commons.Stacking.Runtime.StackableConverter;
-using Commons.Stacking.Runtime.StackableEmitter;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCommons.Stacking.Runtime.StackableConverter;
+using VimCommons.Stacking.Runtime.StackableEmitter;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Stacking.Runtime.StackableRunner
+namespace VimCommons.Stacking.Runtime.StackableRunner
 {
     public class ServiceStackSystemRunner : MonoBehaviour
     {

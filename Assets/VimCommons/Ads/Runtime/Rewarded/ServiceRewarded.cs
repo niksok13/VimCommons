@@ -1,10 +1,10 @@
 using System;
-using Commons.Ads.Runtime.InterstitialRunner;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
 using UnityEngine;
+using VimCommons.Ads.Runtime.InterstitialRunner;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Ads.Runtime.Rewarded
+namespace VimCommons.Ads.Runtime.Rewarded
 {
     public class ServiceRewarded : MonoBehaviour, IRewarded
     {

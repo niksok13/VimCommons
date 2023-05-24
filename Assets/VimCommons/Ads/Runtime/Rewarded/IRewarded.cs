@@ -1,7 +1,7 @@
 using System;
-using Core.Runtime.MVVM;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Ads.Runtime.Rewarded
+namespace VimCommons.Ads.Runtime.Rewarded
 {
     public interface IRewarded
     {

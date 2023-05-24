@@ -1,10 +1,10 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.EZTween;
-using Core.Runtime.Pooling;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.EZTween;
+using VimCore.Runtime.Pooling;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Looting.Runtime.Core
+namespace VimCommons.Looting.Runtime.Core
 {
     [CreateAssetMenu]
     public class LootableDefinition: ScriptableObjectWithGuid

@@ -1,8 +1,8 @@
-using Commons.Roulette.Runtime.Reward;
-using Core.Runtime.MVVM;
 using UnityEngine;
+using VimCommons.Roulette.Runtime.Reward;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Roulette.Runtime.Roulette
+namespace VimCommons.Roulette.Runtime.Roulette
 {
     public class VMSectorBuilder : AViewModel<RouletteReward[],Transform>
     {

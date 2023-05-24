@@ -1,9 +1,9 @@
-using Commons.Looting.Runtime.Core;
-using Commons.Looting.Runtime.Inventory;
-using Commons.QuestQueue.Runtime.ServiceQuestQueue;
-using Core.Runtime.DependencyManagement;
+using VimCommons.Looting.Runtime.Core;
+using VimCommons.Looting.Runtime.Inventory;
+using VimCommons.QuestQueue.Runtime.ServiceQuestQueue;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.QuestCommons.Runtime
+namespace VimCommons.QuestCommons.Runtime
 {
     public class QuestLootAmount: AQuestCount
     {

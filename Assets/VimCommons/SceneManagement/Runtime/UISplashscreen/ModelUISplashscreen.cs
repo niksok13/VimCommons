@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.EZTween;
-using Core.Runtime.MVVM;
 using Cysharp.Threading.Tasks;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.EZTween;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.SceneManagement.Runtime.UISplashscreen
+namespace VimCommons.SceneManagement.Runtime.UISplashscreen
 {
     
     public class ModelUISplashscreen: ModelBehaviour, ISplashscreen

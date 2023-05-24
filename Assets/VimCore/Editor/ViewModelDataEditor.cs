@@ -1,10 +1,10 @@
 using System;
 using System.Reflection;
-using Core.Runtime.MVVM;
 using UnityEditor;
 using UnityEngine;
+using VimCore.Runtime.MVVM;
 
-namespace Core.Editor
+namespace VimCore.Editor
 {
     [CustomEditor(typeof(AViewModel<,>),true)]
     [CanEditMultipleObjects]

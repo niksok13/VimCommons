@@ -1,7 +1,7 @@
-using Commons.Roulette.Runtime.Roulette;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
-using Core.Runtime.MVVM.ViewModels.Input;
+using VimCommons.Roulette.Runtime.Roulette;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.MVVM.ViewModels.Input;
 
 namespace Test.Core
 {

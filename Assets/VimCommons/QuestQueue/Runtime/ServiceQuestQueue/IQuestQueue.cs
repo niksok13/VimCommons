@@ -1,6 +1,6 @@
-using Core.Runtime.MVVM;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.QuestQueue.Runtime.ServiceQuestQueue
+namespace VimCommons.QuestQueue.Runtime.ServiceQuestQueue
 {
     public interface IQuestQueue
     {

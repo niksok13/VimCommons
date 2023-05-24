@@ -1,7 +1,7 @@
-using Core.Runtime.Pooling;
 using UnityEngine;
+using VimCore.Runtime.Pooling;
 
-namespace Core.Runtime.MVVM.ViewModels.Particles
+namespace VimCore.Runtime.MVVM.ViewModels.Particles
 {
     public class VMParticleOneShot : AViewModel<GameObject>
     {

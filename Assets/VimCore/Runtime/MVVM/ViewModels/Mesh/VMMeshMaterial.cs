@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core.Runtime.MVVM.ViewModels.Mesh
+namespace VimCore.Runtime.MVVM.ViewModels.Mesh
 {
     public class VMMeshMaterial : AViewModel<Material,MeshRenderer>
     {

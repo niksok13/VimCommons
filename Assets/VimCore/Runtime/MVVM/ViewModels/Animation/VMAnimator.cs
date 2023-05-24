@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core.Runtime.MVVM.ViewModels.Animation
+namespace VimCore.Runtime.MVVM.ViewModels.Animation
 {
     public class VMAnimator: MonoBehaviour
     {

@@ -1,4 +1,4 @@
-namespace Commons.Ads.Runtime.Banner
+namespace VimCommons.Ads.Runtime.Banner
 {
     public interface IBanner
     {

@@ -1,11 +1,11 @@
 using System;
-using Commons.Boosters.Runtime.Core;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
-using Core.Runtime.MVVM.ViewModels.Input;
 using UnityEngine;
+using VimCommons.Boosters.Runtime.Core;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.MVVM.ViewModels.Input;
 
-namespace Commons.Boosters.Runtime.UICard
+namespace VimCommons.Boosters.Runtime.UICard
 {
     public class ModelBoosterCard : ModelBehaviour
     {

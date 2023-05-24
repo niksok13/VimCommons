@@ -1,4 +1,4 @@
-namespace Core.Runtime.DependencyManagement
+namespace VimCore.Runtime.DependencyManagement
 {
     public static class Locator
     {

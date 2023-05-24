@@ -1,8 +1,8 @@
-using Commons.Looting.Runtime.Inventory;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
+using VimCommons.Looting.Runtime.Inventory;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Looting.Runtime.UIInventory
+namespace VimCommons.Looting.Runtime.UIInventory
 {
     public class ModelUIInventory : ModelBehaviour
     {

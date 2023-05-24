@@ -1,8 +1,8 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Vibration.Runtime.ServiceVibration
+namespace VimCommons.Vibration.Runtime.ServiceVibration
 {
     public class ServiceVibration: ModelBehaviour, IVibration
     {

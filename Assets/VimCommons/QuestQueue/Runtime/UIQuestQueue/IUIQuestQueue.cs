@@ -1,7 +1,7 @@
-using Core.Runtime.MVVM;
 using UnityEngine;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.QuestQueue.Runtime.UIQuestQueue
+namespace VimCommons.QuestQueue.Runtime.UIQuestQueue
 {
     public interface IUIQuestQueue
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core.Runtime.EZTween.Commons
+namespace VimCore.Runtime.EZTween.Commons
 {
     public class EZLoop : MonoBehaviour
     {

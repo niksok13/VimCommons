@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Purchasing;
 
-namespace Commons.Purchase.Runtime.IapProducts
+namespace VimCommons.Purchase.Runtime.IapProducts
 {
     [CreateAssetMenu]
     public class ProductInfo : ScriptableObject

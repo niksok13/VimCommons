@@ -1,7 +1,7 @@
-using Core.Runtime.DependencyManagement;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.Camera.Runtime.ServiceLookCameraSystem
+namespace VimCommons.Camera.Runtime.ServiceLookCameraSystem
 {
     public class LookCameraComponent : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-﻿namespace Core.Runtime.MVVM.ViewModels.Image
+﻿namespace VimCore.Runtime.MVVM.ViewModels.Image
 {
     public class VMImageContent : AViewModel<UnityEngine.Sprite, UnityEngine.UI.Image>
     {

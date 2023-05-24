@@ -1,8 +1,8 @@
-using Core.Runtime.Pooling;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCore.Runtime.Pooling;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Stacking.Runtime.Stackable
+namespace VimCommons.Stacking.Runtime.Stackable
 {
     [CreateAssetMenu]
     public class StackableDefinition: ScriptableObjectWithGuid

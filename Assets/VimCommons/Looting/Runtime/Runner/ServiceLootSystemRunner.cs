@@ -1,9 +1,9 @@
-using Commons.Looting.Runtime.Core;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCommons.Looting.Runtime.Core;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Looting.Runtime.Runner
+namespace VimCommons.Looting.Runtime.Runner
 {
     public class ServiceLootSystemRunner : MonoBehaviour
     {

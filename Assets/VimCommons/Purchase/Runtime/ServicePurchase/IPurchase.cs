@@ -1,8 +1,8 @@
-using Commons.Purchase.Runtime.IapProducts;
-using Core.Runtime.MVVM;
 using UnityEngine.Purchasing;
+using VimCommons.Purchase.Runtime.IapProducts;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Purchase.Runtime.ServicePurchase
+namespace VimCommons.Purchase.Runtime.ServicePurchase
 {
     public interface IPurchase
     {

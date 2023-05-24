@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Core.Runtime.MVVM
+namespace VimCore.Runtime.MVVM
 {
     public class ObservableData<T>
     {

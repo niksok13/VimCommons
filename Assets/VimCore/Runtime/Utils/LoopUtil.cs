@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.LowLevel;
 
-namespace Core.Runtime.Utils
+namespace VimCore.Runtime.Utils
 {
     public static class LoopUtil
     {

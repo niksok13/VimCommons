@@ -1,8 +1,8 @@
 using System;
-using Core.Runtime.DependencyManagement;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.Looting.Runtime.Core
+namespace VimCommons.Looting.Runtime.Core
 {
     public class LooterComponent: MonoBehaviour
     {

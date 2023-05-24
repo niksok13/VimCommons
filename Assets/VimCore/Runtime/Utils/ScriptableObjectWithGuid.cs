@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Core.Runtime.Utils
+namespace VimCore.Runtime.Utils
 {
     public abstract class ScriptableObjectWithGuid : ScriptableObject
     {

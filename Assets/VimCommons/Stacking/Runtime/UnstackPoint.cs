@@ -1,10 +1,10 @@
 using System;
-using Commons.Stacking.Runtime.Stackable;
-using Core.Runtime.DependencyManagement;
 using UnityEditor;
 using UnityEngine;
+using VimCommons.Stacking.Runtime.Stackable;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.Stacking.Runtime
+namespace VimCommons.Stacking.Runtime
 {
     public sealed class UnstackPoint: MonoBehaviour
     {

@@ -1,7 +1,7 @@
-using Core.Runtime.DependencyManagement;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.QuestQueue.Runtime.QuestArrows
+namespace VimCommons.QuestQueue.Runtime.QuestArrows
 {
     public class ArrowAnchor: MonoBehaviour
     {

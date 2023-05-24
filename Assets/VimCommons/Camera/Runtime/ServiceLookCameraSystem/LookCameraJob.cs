@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Jobs;
 
-namespace Commons.Camera.Runtime.ServiceLookCameraSystem
+namespace VimCommons.Camera.Runtime.ServiceLookCameraSystem
 {
     public struct LookCameraJob : IJobParallelForTransform
     {

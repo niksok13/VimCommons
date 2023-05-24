@@ -1,9 +1,9 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.EZTween;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.EZTween;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Camera.Runtime.ServiceCamera
+namespace VimCommons.Camera.Runtime.ServiceCamera
 {
     public class ServiceCamera : MonoBehaviour, ICamera
     {

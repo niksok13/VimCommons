@@ -1,11 +1,11 @@
 using System;
-using Commons.Camera.Runtime.ServiceCamera;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Utils;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using VimCommons.Camera.Runtime.ServiceCamera;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Input.Runtime.InputTouch
+namespace VimCommons.Input.Runtime.InputTouch
 {
     public class ServiceInputTouch : MonoBehaviour, ITouchInput,
         IPointerDownHandler, 

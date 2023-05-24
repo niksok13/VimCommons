@@ -1,8 +1,8 @@
 using System.Linq;
-using Commons.Progression.Runtime.Node;
-using Core.Runtime.MVVM;
+using VimCommons.Progression.Runtime.Node;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Progression.Runtime.Building
+namespace VimCommons.Progression.Runtime.Building
 {
     public class ProgressionBuilding : ModelBehaviour
     {

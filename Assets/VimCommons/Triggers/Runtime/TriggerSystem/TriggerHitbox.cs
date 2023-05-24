@@ -1,8 +1,8 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Triggers.Runtime.TriggerSystem
+namespace VimCommons.Triggers.Runtime.TriggerSystem
 {
     [RequireComponent(typeof(Collider))]
     public sealed class TriggerHitbox : ASignalEmitter<SignalTrigger, Collider>

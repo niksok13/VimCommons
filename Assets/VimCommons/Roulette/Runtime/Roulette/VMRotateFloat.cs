@@ -1,7 +1,7 @@
-using Core.Runtime.MVVM;
 using UnityEngine;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Roulette.Runtime.Roulette
+namespace VimCommons.Roulette.Runtime.Roulette
 {
     public class VMRotateFloat : AViewModel<float, Transform>
     {

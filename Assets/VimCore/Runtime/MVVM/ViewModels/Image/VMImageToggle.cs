@@ -1,4 +1,4 @@
-﻿namespace Core.Runtime.MVVM.ViewModels.Image
+﻿namespace VimCore.Runtime.MVVM.ViewModels.Image
 {
     public class VMImageToggle : AViewModel<bool, UnityEngine.UI.Image>
     {

@@ -1,7 +1,7 @@
-using Commons.Progression.Runtime.Node;
-using Commons.QuestQueue.Runtime.ServiceQuestQueue;
+using VimCommons.Progression.Runtime.Node;
+using VimCommons.QuestQueue.Runtime.ServiceQuestQueue;
 
-namespace Commons.QuestCommons.Runtime
+namespace VimCommons.QuestCommons.Runtime
 {
     public class QuestNodeLevel: AQuestCount
     {

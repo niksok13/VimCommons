@@ -1,9 +1,9 @@
-using Commons.Ads.Runtime.Interstitial;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCommons.Ads.Runtime.Interstitial;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Ads.Runtime.InterstitialRunner
+namespace VimCommons.Ads.Runtime.InterstitialRunner
 {
     public class ServiceInterstitialRunner : MonoBehaviour, IInterstitialRunner
     {

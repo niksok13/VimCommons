@@ -1,4 +1,4 @@
-namespace Commons.Triggers.Runtime.TriggerSystem
+namespace VimCommons.Triggers.Runtime.TriggerSystem
 {
     public enum TriggerState
     {

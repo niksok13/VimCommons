@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Commons.Environment.Runtime.GrassSystem
+namespace VimCommons.Environment.Runtime.GrassSystem
 {
     [RequireComponent(typeof(Renderer))]
     public class GrassEntity : MonoBehaviour

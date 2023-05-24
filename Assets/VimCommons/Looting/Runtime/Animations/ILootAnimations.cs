@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
-using Commons.Looting.Runtime.Core;
 using UnityEngine;
+using VimCommons.Looting.Runtime.Core;
 
-namespace Commons.Looting.Runtime.Animations
+namespace VimCommons.Looting.Runtime.Animations
 {
     public interface ILootAnimations
     {

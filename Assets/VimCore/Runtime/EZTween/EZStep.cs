@@ -1,6 +1,6 @@
 using System;
 
-namespace Core.Runtime.EZTween
+namespace VimCore.Runtime.EZTween
 {
     internal class EZStep
     {

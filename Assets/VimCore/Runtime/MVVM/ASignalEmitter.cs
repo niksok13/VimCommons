@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Core.Runtime.MVVM
+namespace VimCore.Runtime.MVVM
 {
     
     public abstract class ASignalEmitter<TPayload, TComponent> : MonoBehaviour where TPayload: ISignal

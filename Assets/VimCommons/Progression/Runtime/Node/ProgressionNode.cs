@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
-using Core.Runtime.MVVM;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Progression.Runtime.Node
+namespace VimCommons.Progression.Runtime.Node
 {
     [CreateAssetMenu]
     public class ProgressionNode : ScriptableObjectWithGuid

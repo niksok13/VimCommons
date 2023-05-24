@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Core.Runtime.MVVM.ViewModels.Image
+namespace VimCore.Runtime.MVVM.ViewModels.Image
 {
     public class VMImageColor : AViewModel<Color, UnityEngine.UI.Image>
     {

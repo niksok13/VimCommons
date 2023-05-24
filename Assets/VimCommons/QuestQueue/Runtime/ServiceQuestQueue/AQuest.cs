@@ -1,7 +1,7 @@
-using Commons.Camera.Runtime.ServiceCamera;
 using UnityEngine;
+using VimCommons.Camera.Runtime.ServiceCamera;
 
-namespace Commons.QuestQueue.Runtime.ServiceQuestQueue
+namespace VimCommons.QuestQueue.Runtime.ServiceQuestQueue
 {
     public abstract class AQuest: MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core.Runtime.MVVM.ViewModels.SpriteRenderer
+namespace VimCore.Runtime.MVVM.ViewModels.SpriteRenderer
 {
     public class VMSpriteRendererColorGradient : AViewModel<float,UnityEngine.SpriteRenderer>
     {

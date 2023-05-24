@@ -1,6 +1,6 @@
 using UnityEngine.UI;
 
-namespace Core.Runtime.MVVM.ViewModels
+namespace VimCore.Runtime.MVVM.ViewModels
 {
     public class VMLayoutElementExclude : AViewModel<bool, LayoutElement>
     {

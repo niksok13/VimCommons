@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core.Runtime.EZTween
+namespace VimCore.Runtime.EZTween
 {
     public static class EZCurve
     {

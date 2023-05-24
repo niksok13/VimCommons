@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Core.Runtime.DependencyManagement
+namespace VimCore.Runtime.DependencyManagement
 {
     public class Filter<T>: ICollection<T>, IEnumerator<T>
     {

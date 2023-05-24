@@ -1,8 +1,8 @@
-using Commons.Looting.Runtime.Core;
-using Core.Runtime.MVVM;
 using UnityEngine;
+using VimCommons.Looting.Runtime.Core;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Looting.Runtime.ViewModels
+namespace VimCommons.Looting.Runtime.ViewModels
 {
     
     public class VMLootSpawner : AViewModel<Transform>

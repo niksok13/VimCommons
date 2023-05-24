@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Commons.Vibration.Runtime.ServiceVibration
+namespace VimCommons.Vibration.Runtime.ServiceVibration
 {
         public class Taptic : MonoBehaviour {
 

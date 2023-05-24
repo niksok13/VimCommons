@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
-using Commons.Purchase.Runtime.IapProducts;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
 using Unity.Services.Core;
 using Unity.Services.Core.Environments;
 using UnityEngine;
 using UnityEngine.Purchasing;
+using VimCommons.Purchase.Runtime.IapProducts;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Purchase.Runtime.ServicePurchase
+namespace VimCommons.Purchase.Runtime.ServicePurchase
 {
     public class ServicePurchase: MonoBehaviour, IPurchase, IStoreListener
     {

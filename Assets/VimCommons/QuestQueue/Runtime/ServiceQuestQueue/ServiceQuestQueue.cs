@@ -1,15 +1,15 @@
 using System;
 using System.Linq;
-using Commons.Analytics.Runtime.ServiceAnalytics;
-using Commons.Camera.Runtime.ServiceCamera;
-using Commons.QuestQueue.Runtime.QuestArrows;
-using Commons.QuestQueue.Runtime.UIQuestQueue;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.EZTween;
-using Core.Runtime.MVVM;
-using Core.Runtime.Utils;
+using VimCommons.Analytics.Runtime.ServiceAnalytics;
+using VimCommons.Camera.Runtime.ServiceCamera;
+using VimCommons.QuestQueue.Runtime.QuestArrows;
+using VimCommons.QuestQueue.Runtime.UIQuestQueue;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.EZTween;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.Utils;
 
-namespace Commons.QuestQueue.Runtime.ServiceQuestQueue
+namespace VimCommons.QuestQueue.Runtime.ServiceQuestQueue
 {
     public class ServiceQuestQueue : ModelBehaviour, IQuestQueue
     {

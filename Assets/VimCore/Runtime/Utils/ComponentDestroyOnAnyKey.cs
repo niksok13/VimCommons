@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core.Runtime.Utils
+namespace VimCore.Runtime.Utils
 {
     public class ComponentDestroyOnAnyKey : MonoBehaviour
     {

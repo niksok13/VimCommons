@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Core.Runtime.MVVM.ViewModels.Image
+namespace VimCore.Runtime.MVVM.ViewModels.Image
 {
     public class VMImageColorGradient : AViewModel<float,UnityEngine.UI.Image>
     {

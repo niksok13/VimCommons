@@ -1,4 +1,4 @@
-namespace Core.Runtime.MVVM.ViewModels.Slider
+namespace VimCore.Runtime.MVVM.ViewModels.Slider
 {
     public struct SignalSlider: ISignal
     {

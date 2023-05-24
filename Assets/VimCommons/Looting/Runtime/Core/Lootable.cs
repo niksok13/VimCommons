@@ -1,8 +1,8 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Looting.Runtime.Core
+namespace VimCommons.Looting.Runtime.Core
 {
     public class Lootable : MonoBehaviour
     {

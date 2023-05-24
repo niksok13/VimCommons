@@ -1,8 +1,8 @@
-using Core.Runtime.EZTween;
-using Core.Runtime.Pooling;
 using UnityEngine;
+using VimCore.Runtime.EZTween;
+using VimCore.Runtime.Pooling;
 
-namespace Core.Runtime.MVVM.ViewModels.Tweening
+namespace VimCore.Runtime.MVVM.ViewModels.Tweening
 {
     public class VMTweenBounceScaleRotate : AViewModel<Transform>
     {

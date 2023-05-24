@@ -1,7 +1,7 @@
-using Commons.Stacking.Runtime.Stackable;
 using UnityEngine;
+using VimCommons.Stacking.Runtime.Stackable;
 
-namespace Commons.Stacking.Runtime.StackableRecycler
+namespace VimCommons.Stacking.Runtime.StackableRecycler
 {
     public class ModelStackableRecycler : MonoBehaviour
     {

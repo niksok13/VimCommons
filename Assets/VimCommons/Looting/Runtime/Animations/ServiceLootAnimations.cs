@@ -1,13 +1,13 @@
 using System.Threading.Tasks;
-using Commons.Looting.Runtime.Core;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.EZTween;
-using Core.Runtime.Utils;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using VimCommons.Looting.Runtime.Core;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.EZTween;
+using VimCore.Runtime.Utils;
 using Random = UnityEngine.Random;
 
-namespace Commons.Looting.Runtime.Animations
+namespace VimCommons.Looting.Runtime.Animations
 {
     public class ServiceLootAnimations: MonoBehaviour, ILootAnimations
     {

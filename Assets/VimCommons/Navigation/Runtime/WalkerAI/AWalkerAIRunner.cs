@@ -1,9 +1,9 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
 using UnityEngine;
 using UnityEngine.AI;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Navigation.Runtime.WalkerAI
+namespace VimCommons.Navigation.Runtime.WalkerAI
 {
     public abstract class AWalkerAIRunner: ModelBehaviour
     {

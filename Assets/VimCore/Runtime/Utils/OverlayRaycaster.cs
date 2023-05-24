@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Core.Runtime.Utils
+namespace VimCore.Runtime.Utils
 {
     public class OverlayRaycaster : BaseRaycaster
     {

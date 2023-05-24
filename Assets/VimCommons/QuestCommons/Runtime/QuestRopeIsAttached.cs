@@ -1,7 +1,7 @@
-using Commons.QuestQueue.Runtime.ServiceQuestQueue;
-using Commons.Rope.Runtime.JointRope;
+using VimCommons.QuestQueue.Runtime.ServiceQuestQueue;
+using VimCommons.Rope.Runtime.JointRope;
 
-namespace Commons.QuestCommons.Runtime
+namespace VimCommons.QuestCommons.Runtime
 {
     public class QuestRopeIsAttached : AQuest
     {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Commons.Input.Runtime.InputKey
+namespace VimCommons.Input.Runtime.InputKey
 {
     public interface IKeyInput
     {

@@ -1,8 +1,8 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Navigation.Runtime.AgentConveyorSystem
+namespace VimCommons.Navigation.Runtime.AgentConveyorSystem
 {
     public class ServiceAgentConveyorSystem: MonoBehaviour
     {

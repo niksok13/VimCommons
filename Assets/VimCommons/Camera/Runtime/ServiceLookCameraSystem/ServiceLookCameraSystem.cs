@@ -1,12 +1,12 @@
 using System.Linq;
-using Commons.Camera.Runtime.ServiceCamera;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Utils;
 using Unity.Jobs;
 using UnityEngine;
 using UnityEngine.Jobs;
+using VimCommons.Camera.Runtime.ServiceCamera;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Camera.Runtime.ServiceLookCameraSystem
+namespace VimCommons.Camera.Runtime.ServiceLookCameraSystem
 {
     public class ServiceLookCameraSystem: MonoBehaviour
     {

@@ -1,7 +1,7 @@
-using Core.Runtime.DependencyManagement;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.Analytics.Runtime.ServiceAnalytics
+namespace VimCommons.Analytics.Runtime.ServiceAnalytics
 {
     public abstract class AAnalyticsProvider : MonoBehaviour
     {

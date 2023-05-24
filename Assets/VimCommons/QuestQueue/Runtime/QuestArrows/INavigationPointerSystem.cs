@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Commons.QuestQueue.Runtime.QuestArrows
+namespace VimCommons.QuestQueue.Runtime.QuestArrows
 {
     public interface INavigationPointerSystem
     {

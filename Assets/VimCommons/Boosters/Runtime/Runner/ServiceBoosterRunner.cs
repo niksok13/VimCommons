@@ -1,9 +1,9 @@
-using Commons.Boosters.Runtime.Core;
-using Commons.Boosters.Runtime.UICard;
-using Core.Runtime.DependencyManagement;
 using UnityEngine;
+using VimCommons.Boosters.Runtime.Core;
+using VimCommons.Boosters.Runtime.UICard;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.Boosters.Runtime.Runner
+namespace VimCommons.Boosters.Runtime.Runner
 {
     public class ServiceBoosterRunner : MonoBehaviour
     {

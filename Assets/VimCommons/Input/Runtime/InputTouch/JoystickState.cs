@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Commons.Input.Runtime.InputTouch
+namespace VimCommons.Input.Runtime.InputTouch
 {
     [Serializable]
     public struct JoystickState

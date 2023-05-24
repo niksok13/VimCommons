@@ -1,8 +1,8 @@
-using Core.Runtime.EZTween;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCore.Runtime.EZTween;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Stacking.Runtime.Stackable
+namespace VimCommons.Stacking.Runtime.Stackable
 {
     public class ModelStackable: MonoBehaviour
     {

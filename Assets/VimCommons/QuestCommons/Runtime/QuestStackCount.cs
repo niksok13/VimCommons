@@ -1,8 +1,8 @@
-using Commons.QuestQueue.Runtime.ServiceQuestQueue;
-using Commons.Stacking.Runtime;
-using Commons.Stacking.Runtime.Stackable;
+using VimCommons.QuestQueue.Runtime.ServiceQuestQueue;
+using VimCommons.Stacking.Runtime;
+using VimCommons.Stacking.Runtime.Stackable;
 
-namespace Commons.QuestCommons.Runtime
+namespace VimCommons.QuestCommons.Runtime
 {
     public class QuestStackCount : AQuestCount
     {

@@ -1,13 +1,13 @@
 using System.Collections.Generic;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.EZTween;
-using Core.Runtime.MVVM;
-using Core.Runtime.Utils;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.EZTween;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.Utils;
 using Random = UnityEngine.Random;
 
-namespace Commons.Looting.Runtime.Core
+namespace VimCommons.Looting.Runtime.Core
 {
     public class ModelLootableStack: ModelBehaviour
     {        

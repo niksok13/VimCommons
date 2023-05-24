@@ -1,4 +1,4 @@
-namespace Core.Runtime.EZTween
+namespace VimCore.Runtime.EZTween
 {
     public struct EZData
     {

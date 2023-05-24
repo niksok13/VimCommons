@@ -1,4 +1,4 @@
-namespace Commons.QuestQueue.Runtime.ServiceQuestQueue
+namespace VimCommons.QuestQueue.Runtime.ServiceQuestQueue
 {
     public class EventQuestCompleted
     {

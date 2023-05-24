@@ -1,10 +1,10 @@
 using System.Linq;
-using Commons.Boosters.Runtime.UICard;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCommons.Boosters.Runtime.UICard;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Boosters.Runtime.OfferEmitter
+namespace VimCommons.Boosters.Runtime.OfferEmitter
 {
     public class ServiceBoosterOfferEmitter : MonoBehaviour
     {

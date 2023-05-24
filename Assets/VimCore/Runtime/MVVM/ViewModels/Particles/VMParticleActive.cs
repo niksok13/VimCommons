@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Core.Runtime.MVVM.ViewModels.Particles
+namespace VimCore.Runtime.MVVM.ViewModels.Particles
 {
     public class VMParticleActive : AViewModel<bool, ParticleSystem>
     {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Commons.Looting.Runtime.Core;
-using Core.Runtime.MVVM;
+using VimCommons.Looting.Runtime.Core;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Looting.Runtime.Inventory
+namespace VimCommons.Looting.Runtime.Inventory
 {
     public interface IInventory
     {

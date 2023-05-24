@@ -1,4 +1,4 @@
-namespace Core.Runtime.MVVM.ViewModels.SpriteRenderer
+namespace VimCore.Runtime.MVVM.ViewModels.SpriteRenderer
 {
     public class VMSpriteRendererToggle : AViewModel<bool, UnityEngine.SpriteRenderer>
     {

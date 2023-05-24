@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Core.Runtime.MVVM.ViewModels.Input
+namespace VimCore.Runtime.MVVM.ViewModels.Input
 {
     public class VMImageClick: 
         ASignalEmitter<SignalClick, CanvasRenderer>, 

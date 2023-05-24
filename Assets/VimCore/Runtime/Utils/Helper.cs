@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Core.Runtime.Utils
+namespace VimCore.Runtime.Utils
 {
     public static class Helper
     {

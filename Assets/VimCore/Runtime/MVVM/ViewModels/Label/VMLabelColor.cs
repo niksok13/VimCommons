@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Core.Runtime.MVVM.ViewModels.Label
+namespace VimCore.Runtime.MVVM.ViewModels.Label
 {
     public class VMLabelColor : AViewModel<Color,TMP_Text>
     {

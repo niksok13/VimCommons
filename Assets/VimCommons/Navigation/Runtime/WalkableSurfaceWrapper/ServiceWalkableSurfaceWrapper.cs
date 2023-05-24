@@ -1,9 +1,9 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Utils;
 using Unity.AI.Navigation;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Navigation.Runtime.WalkableSurfaceWrapper
+namespace VimCommons.Navigation.Runtime.WalkableSurfaceWrapper
 {
     public class ServiceWalkableSurfaceWrapper : MonoBehaviour, IWalkableSurfaceWrapper
     {

@@ -1,4 +1,4 @@
-namespace Commons.Roulette.Runtime.Roulette
+namespace VimCommons.Roulette.Runtime.Roulette
 {
     public interface IRoulette
     {

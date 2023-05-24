@@ -1,4 +1,4 @@
-namespace Core.Runtime.MVVM.ViewModels.Image
+namespace VimCore.Runtime.MVVM.ViewModels.Image
 {
     public class VMImageFill : AViewModel<float, UnityEngine.UI.Image>
     {

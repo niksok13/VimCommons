@@ -1,10 +1,10 @@
-using Commons.Purchase.Runtime.ServicePurchase;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
-using Core.Runtime.MVVM.ViewModels.Input;
 using UnityEngine.Purchasing;
+using VimCommons.Purchase.Runtime.ServicePurchase;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.MVVM.ViewModels.Input;
 
-namespace Commons.Purchase.Runtime.IapProducts
+namespace VimCommons.Purchase.Runtime.IapProducts
 {
     public class ModelProductCard: ModelBehaviour
     {

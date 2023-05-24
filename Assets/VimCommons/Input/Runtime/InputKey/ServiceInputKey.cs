@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Input.Runtime.InputKey
+namespace VimCommons.Input.Runtime.InputKey
 {
     public class ServiceInputKey: MonoBehaviour, IKeyInput
     {

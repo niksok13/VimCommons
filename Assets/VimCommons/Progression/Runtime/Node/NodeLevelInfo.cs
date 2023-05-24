@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Commons.Looting.Runtime.Core;
 using UnityEngine;
+using VimCommons.Looting.Runtime.Core;
 
-namespace Commons.Progression.Runtime.Node
+namespace VimCommons.Progression.Runtime.Node
 {
     [Serializable]
     public class NodeLevelInfo

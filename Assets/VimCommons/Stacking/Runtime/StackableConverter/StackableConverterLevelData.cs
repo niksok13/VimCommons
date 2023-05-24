@@ -1,7 +1,7 @@
 using System;
-using Commons.Stacking.Runtime.Stackable;
+using VimCommons.Stacking.Runtime.Stackable;
 
-namespace Commons.Stacking.Runtime.StackableConverter
+namespace VimCommons.Stacking.Runtime.StackableConverter
 {
     [Serializable]
     public struct StackableConverterLevelData

@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using Commons.Progression.Runtime.Building;
-using Commons.Stacking.Runtime.Stackable;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.MVVM;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCommons.Progression.Runtime.Building;
+using VimCommons.Stacking.Runtime.Stackable;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Stacking.Runtime.StackableConverter
+namespace VimCommons.Stacking.Runtime.StackableConverter
 {
     public class ModelStackableConverter : ProgressionBuilding<StackableConverterLevelData>
     {

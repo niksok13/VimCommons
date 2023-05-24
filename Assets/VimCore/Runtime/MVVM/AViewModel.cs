@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core.Runtime.MVVM
+namespace VimCore.Runtime.MVVM
 {
     public abstract class AViewModel<TData,TComponent> : MonoBehaviour
     {

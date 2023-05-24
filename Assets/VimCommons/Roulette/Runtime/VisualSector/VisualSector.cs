@@ -1,8 +1,8 @@
-using Commons.Roulette.Runtime.Reward;
-using Core.Runtime.MVVM;
 using UnityEngine;
+using VimCommons.Roulette.Runtime.Reward;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Roulette.Runtime.VisualSector
+namespace VimCommons.Roulette.Runtime.VisualSector
 {
     public class VisualSector : ModelBehaviour
     {

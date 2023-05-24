@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using Commons.Looting.Runtime.Core;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.EZTween;
-using Core.Runtime.MVVM;
 using Newtonsoft.Json;
 using UnityEngine;
+using VimCommons.Looting.Runtime.Core;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.EZTween;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Looting.Runtime.Inventory
+namespace VimCommons.Looting.Runtime.Inventory
 {
     public class Inventory: MonoBehaviour, IInventory
     {

@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using UnityEngine;
 
-namespace Core.Runtime.MVVM
+namespace VimCore.Runtime.MVVM
 {
     public static class ObservableUtils
     {

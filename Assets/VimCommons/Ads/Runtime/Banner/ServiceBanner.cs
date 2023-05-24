@@ -1,7 +1,7 @@
-using Core.Runtime.DependencyManagement;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.Ads.Runtime.Banner
+namespace VimCommons.Ads.Runtime.Banner
 {
     public class ServiceBanner : MonoBehaviour, IBanner
     {

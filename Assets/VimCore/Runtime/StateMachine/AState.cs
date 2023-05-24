@@ -1,4 +1,4 @@
-namespace Core.Runtime.StateMachine
+namespace VimCore.Runtime.StateMachine
 {
     public class AState<TContext, TState> where TState: AState<TContext, TState>
     {

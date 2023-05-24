@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Core.Runtime.MVVM.ViewModels
+namespace VimCore.Runtime.MVVM.ViewModels
 {
     public class VMActiveFloat : AViewModel<float,Transform>
     {

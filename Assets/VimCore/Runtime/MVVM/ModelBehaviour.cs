@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using UnityEngine;
 
-namespace Core.Runtime.MVVM
+namespace VimCore.Runtime.MVVM
 {
     public abstract class ModelBehaviour: MonoBehaviour
     {

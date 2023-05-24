@@ -1,8 +1,8 @@
-using Core.Runtime.DependencyManagement;
 using UnityEngine;
 using UnityEngine.AI;
+using VimCore.Runtime.DependencyManagement;
 
-namespace Commons.Navigation.Runtime.AgentConveyorSystem
+namespace VimCommons.Navigation.Runtime.AgentConveyorSystem
 {
     public class ConveyorAgentComponent : MonoBehaviour
     {

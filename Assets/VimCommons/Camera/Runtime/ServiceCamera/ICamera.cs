@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Commons.Camera.Runtime.ServiceCamera
+namespace VimCommons.Camera.Runtime.ServiceCamera
 {
     public interface ICamera
     {

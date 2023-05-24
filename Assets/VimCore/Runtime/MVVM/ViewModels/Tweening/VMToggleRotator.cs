@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core.Runtime.MVVM.ViewModels.Tweening
+namespace VimCore.Runtime.MVVM.ViewModels.Tweening
 {
     public class VMToggleRotator: AViewModel<bool, GameObject>
     {

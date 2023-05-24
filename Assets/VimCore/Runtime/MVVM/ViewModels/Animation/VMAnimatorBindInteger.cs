@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core.Runtime.MVVM.ViewModels.Animation
+namespace VimCore.Runtime.MVVM.ViewModels.Animation
 {
     public class VMAnimatorBindInteger : AViewModel<int, Animator>
     {

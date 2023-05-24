@@ -1,6 +1,6 @@
-using Core.Runtime.MVVM;
+using VimCore.Runtime.MVVM;
 
-namespace Commons.Triggers.Runtime.TriggerSystem
+namespace VimCommons.Triggers.Runtime.TriggerSystem
 {
     public struct SignalTrigger: ISignal
     {

@@ -1,8 +1,8 @@
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Navigation.Runtime.WalkerAI
+namespace VimCommons.Navigation.Runtime.WalkerAI
 {
     public class ServiceWalkerAIRunner : MonoBehaviour
     {

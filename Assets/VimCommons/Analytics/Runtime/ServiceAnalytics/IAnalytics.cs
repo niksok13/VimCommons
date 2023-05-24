@@ -1,4 +1,4 @@
-namespace Commons.Analytics.Runtime.ServiceAnalytics
+namespace VimCommons.Analytics.Runtime.ServiceAnalytics
 {
     public interface IAnalytics
     {

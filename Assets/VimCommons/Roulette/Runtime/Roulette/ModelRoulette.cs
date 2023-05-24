@@ -1,12 +1,12 @@
-using Commons.Roulette.Runtime.Reward;
-using Core.Runtime.DependencyManagement;
-using Core.Runtime.EZTween;
-using Core.Runtime.MVVM;
-using Core.Runtime.MVVM.ViewModels.Input;
-using Core.Runtime.Utils;
 using UnityEngine;
+using VimCommons.Roulette.Runtime.Reward;
+using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.EZTween;
+using VimCore.Runtime.MVVM;
+using VimCore.Runtime.MVVM.ViewModels.Input;
+using VimCore.Runtime.Utils;
 
-namespace Commons.Roulette.Runtime.Roulette
+namespace VimCommons.Roulette.Runtime.Roulette
 {
     public class ModelRoulette : ModelBehaviour, IRoulette
     {

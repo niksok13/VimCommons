@@ -11,10 +11,8 @@ namespace VimCommons.Stacking.Runtime.StackableConverter
     public class ModelStackableConverter : ProgressionBuilding<StackableConverterLevelData>
     {
         public float radius = 2;
-        public int capacity = 4;
         public Transform unstackAnchor;
         public float unstackStep;
-        public StackableDefinition sourceDefinition;
 
         private static readonly Filter<ModelStackableConverter> Filter = Locator.Filter<ModelStackableConverter>();
         private void OnEnable() => Filter.Add(this);
@@ -24,30 +22,41 @@ namespace VimCommons.Stacking.Runtime.StackableConverter
         
         private Transform _transform;
         public Transform Transform => _transform ??= transform;
-        
-        public ObservableData<int> QueueCount { get; } = new();
+
+        private ObservableDictionary<StackableDefinition, int> StackableCount { get; } = new();
         public ObservableData<bool> IsWork { get; } = new();
         public ObservableData<bool> CanInteract { get; } = new();
         
         public Stack<ModelStackable> result = new();
+        private StackableConversionFormula Formula => LevelData.conversionFormula;
 
         private float _timer;
 
         private void Awake()
         {
-            QueueCount.OnValue += OnCount;
+
+            StackableCount.OnData += OnContent;
         }
 
-        private void OnCount(int obj)
+        private void OnContent(Dictionary<StackableDefinition, int> obj)
         {
-            IsWork.Value = obj > 0;
+            foreach (var entry in Formula.source)
+            {
+                if (StackableCount[entry.type] < entry.requirement)
+                {
+                    IsWork.Value = false;
+                    return;
+                }
+            }
+            IsWork.Value = true;
         }
+
 
         public void TickUpdate()
         {
             TickTopup();
             TickWithdraw();
-            TickProcess();
+            TickConversion();
             TickTrigger();
         }
 
@@ -70,28 +79,40 @@ namespace VimCommons.Stacking.Runtime.StackableConverter
 
         private void TickTopup()
         {
-            if (QueueCount.Value >= capacity) return;
-            foreach (var stack in Stacks)
+            foreach (var entry in Formula.source)
             {
-                if (!Helper.WithinRadius(stack.Transform, Transform, radius)) continue;
-                if (stack.TryPeek(sourceDefinition, out var item))
+                if (StackableCount[entry.type] >= entry.capacity) continue;
+                foreach (var stack in Stacks)
                 {
-                    var posTo = Transform.position;
-                    item.TweenRemove(posTo);
-                    QueueCount.Value += 1;
-                    return;
+                    if (!Helper.WithinRadius(stack.Transform, Transform, radius)) continue;
+                    if (stack.TryPeek(entry.type, out var item))
+                    {
+                        var posTo = Transform.position;
+                        item.TweenRemove(posTo);
+                        StackableCount[entry.type] += 1;
+                        return;
+                    }
                 }
             }
         }
 
-        private void TickProcess()
-        { 
-            if (QueueCount.Value < 1) return;
+        private void TickConversion()
+        {
+            if (!IsWork.Value) return;
+            
             _timer += Time.deltaTime;
             if (_timer < LevelData.conversionTime) return;
             _timer = 0;
-            QueueCount.Value -= 1;
-            var item = LevelData.targetDefinition.Spawn();
+            
+            FinishConversion();
+        }
+
+        private void FinishConversion()
+        {
+            foreach (var entry in Formula.source) 
+                StackableCount[entry.type] -= entry.requirement;
+
+            var item = Formula.result.Spawn();
             item.Init(unstackAnchor.position + unstackAnchor.up * unstackStep * result.Count);
             item.Transform.rotation = unstackAnchor.rotation;
             result.Push(item);

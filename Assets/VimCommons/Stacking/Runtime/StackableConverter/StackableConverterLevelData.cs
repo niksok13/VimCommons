@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine.Serialization;
 using VimCommons.Stacking.Runtime.Stackable;
 
 namespace VimCommons.Stacking.Runtime.StackableConverter

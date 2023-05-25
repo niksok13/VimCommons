@@ -32,26 +32,6 @@ namespace VimCommons.Stacking.Runtime.StackableConverter
 
         private float _timer;
 
-        private void Awake()
-        {
-
-            StackableCount.OnData += OnContent;
-        }
-
-        private void OnContent(Dictionary<StackableDefinition, int> obj)
-        {
-            foreach (var entry in Formula.source)
-            {
-                if (StackableCount[entry.type] < entry.requirement)
-                {
-                    IsWork.Value = false;
-                    return;
-                }
-            }
-            IsWork.Value = true;
-        }
-
-
         public void TickUpdate()
         {
             TickTopup();
@@ -98,6 +78,16 @@ namespace VimCommons.Stacking.Runtime.StackableConverter
 
         private void TickConversion()
         {
+            foreach (var entry in Formula.source)
+            {
+                if (StackableCount[entry.type] < entry.requirement)
+                {
+                    IsWork.Value = false;
+                    return;
+                }
+            }
+            IsWork.Value = true;
+            
             if (!IsWork.Value) return;
             
             _timer += Time.deltaTime;

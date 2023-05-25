@@ -28,7 +28,6 @@ namespace VimCommons.Stacking.Runtime.StackableConverter
         public ObservableData<bool> CanInteract { get; } = new();
         
         public Stack<ModelStackable> result = new();
-        private StackableConversionFormula Formula => LevelData.conversionFormula;
 
         private float _timer;
 
@@ -59,7 +58,8 @@ namespace VimCommons.Stacking.Runtime.StackableConverter
 
         private void TickTopup()
         {
-            foreach (var entry in Formula.source)
+            if (NodeLevel.Value < 1) return;
+            foreach (var entry in LevelData.conversionFormula.source)
             {
                 if (StackableCount[entry.type] >= entry.capacity) continue;
                 foreach (var stack in Stacks)
@@ -78,7 +78,8 @@ namespace VimCommons.Stacking.Runtime.StackableConverter
 
         private void TickConversion()
         {
-            foreach (var entry in Formula.source)
+            if (NodeLevel.Value < 1) return;
+            foreach (var entry in LevelData.conversionFormula.source)
             {
                 if (StackableCount[entry.type] < entry.requirement)
                 {
@@ -99,10 +100,11 @@ namespace VimCommons.Stacking.Runtime.StackableConverter
 
         private void FinishConversion()
         {
-            foreach (var entry in Formula.source) 
+            if (NodeLevel.Value < 1) return;
+            foreach (var entry in LevelData.conversionFormula.source) 
                 StackableCount[entry.type] -= entry.requirement;
 
-            var item = Formula.result.Spawn();
+            var item = LevelData.conversionFormula.result.Spawn();
             item.Init(unstackAnchor.position + unstackAnchor.up * unstackStep * result.Count);
             item.Transform.rotation = unstackAnchor.rotation;
             result.Push(item);

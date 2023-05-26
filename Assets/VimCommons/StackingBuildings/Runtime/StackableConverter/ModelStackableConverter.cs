@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using VimCommons.Progression.Runtime.Building;
-using VimCommons.Stacking.Runtime.Stackable;
+using VimCommons.Stacking.Runtime;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
 using VimCore.Runtime.Utils;
 
-namespace VimCommons.Stacking.Runtime.StackableConverter
+namespace VimCommons.StackingBuildings.Runtime.StackableConverter
 {
     public class ModelStackableConverter : ProgressionBuilding<StackableConverterLevelData>
     {
@@ -31,7 +31,7 @@ namespace VimCommons.Stacking.Runtime.StackableConverter
 
         private float _timer;
 
-        public void TickUpdate()
+        public void Update()
         {
             TickTopup();
             TickWithdraw();
@@ -51,7 +51,7 @@ namespace VimCommons.Stacking.Runtime.StackableConverter
             foreach (var stack in Stacks)
             {
                 if (!Helper.WithinRadius(stack.Transform, Transform, radius)) continue;
-                if (stack.Pick(top)) return;
+                if (stack.Push(top)) return;
             }
             result.Push(top);
         }
@@ -65,10 +65,11 @@ namespace VimCommons.Stacking.Runtime.StackableConverter
                 foreach (var stack in Stacks)
                 {
                     if (!Helper.WithinRadius(stack.Transform, Transform, radius)) continue;
-                    if (stack.TryPeek(entry.type, out var item))
+                    var stackable = stack.Peek(entry.type);
+                    if (stackable)
                     {
                         var posTo = Transform.position;
-                        item.TweenRemove(posTo);
+                        stackable.TweenRemove(posTo);
                         StackableCount[entry.type] += 1;
                         return;
                     }

@@ -1,6 +1,6 @@
 using System;
 
-namespace VimCommons.Stacking.Runtime.StackableEmitter
+namespace VimCommons.StackingBuildings.Runtime.StackableEmitter
 {
     [Serializable]
     public struct StackableEmitterLevelData

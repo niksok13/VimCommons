@@ -1,6 +1,5 @@
 using VimCommons.QuestQueue.Runtime.ServiceQuestQueue;
 using VimCommons.Stacking.Runtime;
-using VimCommons.Stacking.Runtime.Stackable;
 
 namespace VimCommons.QuestCommons.Runtime
 {

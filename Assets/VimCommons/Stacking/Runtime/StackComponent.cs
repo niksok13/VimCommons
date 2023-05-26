@@ -89,6 +89,11 @@ namespace VimCommons.Stacking.Runtime
             return _stack.Count(i=> i.Definition == definition);
         }
 
+        public bool HaveAny(params StackableDefinition[] variants)
+        {
+            return _stack.Any(i => variants.Contains(i.Definition));
+        }
+
         public bool Push(ModelStackable res)
         {
             if (!HaveSpace(res.Weight)) return false;

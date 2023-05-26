@@ -5,7 +5,7 @@ using VimCore.Runtime.MVVM;
 namespace VimCommons.Triggers.Runtime.TriggerSystem
 {
     [RequireComponent(typeof(Collider))]
-    public sealed class TriggerHitbox : ASignalEmitter<SignalTrigger, Collider>
+    public class TriggerHitbox : ASignalEmitter<SignalTrigger>
     {
         private static readonly Filter<TriggerHitbox> Filter = Locator.Filter<TriggerHitbox>();
         private void OnEnable() => Filter.Add(this);

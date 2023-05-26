@@ -6,7 +6,7 @@ using VimCore.Runtime.MVVM;
 
 namespace VimCore.Editor
 {
-    [CustomEditor(typeof(ASignalEmitter<,>),true)]
+    [CustomEditor(typeof(ASignalEmitter<>),true)]
     [CanEditMultipleObjects]
     public class ModelInvokerArgEditor: UnityEditor.Editor
     {
@@ -15,7 +15,7 @@ namespace VimCore.Editor
         private ModelBehaviour _cachedModel;
         public override void OnInspectorGUI() => OnInspectorGUI((dynamic)target);
 
-        private void OnInspectorGUI<TPayload,TComponent>(ASignalEmitter<TPayload,TComponent> invoker) where TPayload : ISignal
+        private void OnInspectorGUI<TPayload>(ASignalEmitter<TPayload> invoker) where TPayload : ISignal
         {
             var model = _cachedModel ??= invoker.GetComponentInParent<ModelBehaviour>();
             if (model)

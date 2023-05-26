@@ -3,7 +3,7 @@ using UnityEngine;
 using VimCommons.Boosters.Runtime.Core;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
-using VimCore.Runtime.MVVM.ViewModels.Input;
+using VimCore.Runtime.MVVM.SignalEmitters.CanvasImage;
 
 namespace VimCommons.Boosters.Runtime.UICard
 {

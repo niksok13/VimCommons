@@ -4,7 +4,7 @@ using UnityEngine;
 namespace VimCore.Runtime.MVVM
 {
     
-    public abstract class ASignalEmitter<TPayload, TComponent> : MonoBehaviour where TPayload: ISignal
+    public abstract class ASignalEmitter<TPayload> : MonoBehaviour where TPayload: ISignal
     {
         public string method;
         private ModelBehaviour _model;
@@ -12,9 +12,6 @@ namespace VimCore.Runtime.MVVM
 
         private Action<TPayload> _listener;
         private Action<TPayload> Listener => _listener ??= Model.GetAction<TPayload>(method);
-
-        private TComponent _component;
-        protected TComponent Component => _component ??= GetComponent<TComponent>();
 
         public void Emit(TPayload payload) => Listener?.Invoke(payload);
 

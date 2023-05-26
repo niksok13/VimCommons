@@ -3,7 +3,7 @@ using VimCommons.Roulette.Runtime.Reward;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.EZTween;
 using VimCore.Runtime.MVVM;
-using VimCore.Runtime.MVVM.ViewModels.Input;
+using VimCore.Runtime.MVVM.SignalEmitters.CanvasImage;
 using VimCore.Runtime.Utils;
 
 namespace VimCommons.Roulette.Runtime.Roulette

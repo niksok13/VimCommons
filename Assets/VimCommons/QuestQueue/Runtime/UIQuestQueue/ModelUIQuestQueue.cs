@@ -2,7 +2,7 @@ using UnityEngine;
 using VimCommons.QuestQueue.Runtime.ServiceQuestQueue;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
-using VimCore.Runtime.MVVM.ViewModels.Input;
+using VimCore.Runtime.MVVM.SignalEmitters.CanvasImage;
 
 namespace VimCommons.QuestQueue.Runtime.UIQuestQueue
 {

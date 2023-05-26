@@ -1,7 +1,7 @@
 using VimCommons.Roulette.Runtime.Roulette;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
-using VimCore.Runtime.MVVM.ViewModels.Input;
+using VimCore.Runtime.MVVM.SignalEmitters.CanvasImage;
 
 namespace Test.Core
 {

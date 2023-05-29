@@ -19,7 +19,7 @@ namespace VimCommons.StackingBuildings.Runtime.StackableEmitter
         
         public void OnStack(SignalStackInteract signal)
         {
-            if (Time.realtimeSinceStartup > _readyTime) return;
+            if (Time.realtimeSinceStartup < _readyTime) return;
             var stack = signal.Stack;
 
             if (!stack.Ready(LevelData.cooldown)) return;

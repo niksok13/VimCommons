@@ -3,14 +3,13 @@ using VimCommons.Progression.Runtime.Building;
 using VimCommons.Stacking.Runtime;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
-using VimCore.Runtime.Utils;
 
 namespace VimCommons.StackingBuildings.Runtime.StackableConverter
 {
     public class ModelStackableConverter : ProgressionBuilding<StackableConverterLevelData>
     {
-        public float radius = 2;
         public Transform unstackAnchor;
+        public ModelStackableBatch batch;
 
         private static readonly Filter<ModelStackableConverter> Filter = Locator.Filter<ModelStackableConverter>();
         private void OnEnable() => Filter.Add(this);
@@ -19,8 +18,6 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
         
         private Transform _transform;
         public Transform Transform => _transform ??= transform;
-        private ModelStackableBatch _batch;
-        public ModelStackableBatch Batch => _batch ??= GetComponentInChildren<ModelStackableBatch>(); 
 
         private ObservableDictionary<StackableDefinition, int> StackableCount { get; } = new();
         public ObservableData<bool> IsWork { get; } = new();
@@ -84,12 +81,7 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
             var stackable = LevelData.conversionFormula.result.Spawn();
             stackable.Init(unstackAnchor.position);
             stackable.Transform.rotation = unstackAnchor.rotation;
-            Batch.Push(stackable);
+            batch.Push(stackable);
         }
-
-        public bool HaveResult() => Batch.Count > 0;
-
-        public bool IsEmpty() => Batch.Count < 1;
-
     }
 }

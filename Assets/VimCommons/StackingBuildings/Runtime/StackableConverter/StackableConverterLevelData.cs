@@ -6,6 +6,5 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
     public struct StackableConverterLevelData
     {
         public StackableConversionFormula conversionFormula;
-        public float conversionTime;
     }
 }

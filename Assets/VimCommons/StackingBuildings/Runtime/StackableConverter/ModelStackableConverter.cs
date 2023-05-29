@@ -6,7 +6,7 @@ using VimCore.Runtime.MVVM;
 
 namespace VimCommons.StackingBuildings.Runtime.StackableConverter
 {
-    public class ModelStackableConverter : ProgressionBuilding<StackableConverterLevelData>
+    public class ModelStackableConverter : ProgressionBuilding<StackableConversionFormula>
     {
         public Transform unstackAnchor;
         public ModelStackableBatch batch;
@@ -34,7 +34,7 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
         {
             var stack = signal.Stack;
 
-            foreach (var entry in LevelData.conversionFormula.source)
+            foreach (var entry in LevelData.source)
             {
                 if (StackableCount[entry.type] >= entry.capacity) continue;
                 var stackable = stack.Pop(entry.type);
@@ -50,7 +50,7 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
 
         private void TickConversion()
         {
-            foreach (var entry in LevelData.conversionFormula.source)
+            foreach (var entry in LevelData.source)
             {
                 if (StackableCount[entry.type] < entry.requirement)
                 {
@@ -63,7 +63,7 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
             if (!IsWork.Value) return;
             
             _timer += Time.deltaTime;
-            if (_timer < LevelData.conversionTime) return;
+            if (_timer < LevelData.duration) return;
             _timer = 0;
             
             FinishConversion();
@@ -71,14 +71,14 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
 
         private void FinishConversion()
         {
-            foreach (var entry in LevelData.conversionFormula.source) 
+            foreach (var entry in LevelData.source) 
                 StackableCount[entry.type] -= entry.requirement;
             DropResult();
         }
 
         private void DropResult()
         {
-            var stackable = LevelData.conversionFormula.result.Spawn();
+            var stackable = LevelData.result.Spawn();
             stackable.Init(unstackAnchor.position);
             stackable.Transform.rotation = unstackAnchor.rotation;
             batch.Push(stackable);

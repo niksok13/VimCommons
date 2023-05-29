@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using VimCore.Runtime.EZTween;
 using VimCore.Runtime.MVVM;
-using VimCore.Runtime.Utils;
 
 namespace VimCommons.Stacking.Runtime
 {
@@ -54,9 +53,14 @@ namespace VimCommons.Stacking.Runtime
         public void OnStack(SignalStackInteract signal)
         {
             var stack = signal.Stack;
-            if (!Content.TryPop(out var stackable)) return;
-            Amount.Value -= 1;
-            stack.Push(stackable);
+            if (Content.TryPeek(out var stackable))
+            {
+                if (stack.Push(stackable))
+                {
+                    Amount.Value -= 1;
+                    Content.Pop();
+                }
+            }
         }
     }
 }

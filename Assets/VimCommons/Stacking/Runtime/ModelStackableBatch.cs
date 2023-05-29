@@ -37,14 +37,14 @@ namespace VimCommons.Stacking.Runtime
 
         public void Push(ModelStackable stackable)
         {
-            Amount.Value += 1;
-            Content.Push(stackable);
-
             var posFrom = stackable.Transform.position;
             var rotFrom = stackable.Transform.eulerAngles;
             var posTo = Transform.position + Vector3.up + Transform.rotation * GridPos(Count, table.x, table.y);
             var rotTo = Transform.eulerAngles + Vector3.up * Random.Range(-5, 5);
-            
+
+            Content.Push(stackable);
+            Amount.Value += 1;
+
             EZ.Spawn().Tween(ez =>
             {
                 stackable.Transform.position = Vector3.Lerp(posFrom, posTo, ez.QuadIn);

@@ -99,19 +99,17 @@ namespace VimCommons.Stacking.Runtime
             if (!res.Ready) return false;
             res.Pick();
             var posFrom = res.Transform.position;
-            var posTo = TopPoint(res.height);
             var rotFrom = res.Transform.rotation;
-            var rotTo = Transform.rotation;
             _pending += res.Weight;
             EZ.Spawn().Tween(ez =>
             {
-                res.Transform.position = Helper.LerpParabolic(posFrom, posTo, ez.QuadOutIn, 2);
-                res.Transform.rotation = Quaternion.Lerp(rotFrom, rotTo, ez.Linear);
+                res.Transform.position = Helper.LerpParabolic(posFrom, TopPoint(res.height), ez.QuadOutIn, 2);
+                res.Transform.rotation = Quaternion.Lerp(rotFrom, Transform.rotation, ez.Linear);
                 res.Transform.localScale = Vector3.one * ez.BackOut;
             }).Call(_ =>
             {
                 _pending -= res.Weight;
-                _items[_stack.Count] = posTo;
+                _items[_stack.Count] = TopPoint(res.height);
                 _stack.Add(res);
                 OnUpdate?.Invoke(_stack);
             });

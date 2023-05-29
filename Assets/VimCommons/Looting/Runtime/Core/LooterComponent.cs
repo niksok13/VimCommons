@@ -6,10 +6,6 @@ namespace VimCommons.Looting.Runtime.Core
 {
     public class LooterComponent:  ASignalEmitter<SignalLoot>
     {
-        private static readonly Filter<LooterComponent> Filter = Locator.Filter<LooterComponent>();
-        private void OnEnable() => Filter.Add(this);
-        private void OnDisable() => Filter.Remove(this);
-
         private static readonly Filter<ModelLootable> Lootables = Locator.Filter<ModelLootable>();
         private static readonly Filter<ModelLootableBatch> Batches = Locator.Filter<ModelLootableBatch>();
 

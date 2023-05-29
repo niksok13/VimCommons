@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VimCore.Runtime.EZTween;
 using VimCore.Runtime.MVVM;
+using VimCore.Runtime.Utils;
 
 namespace VimCommons.Stacking.Runtime
 {
@@ -38,7 +39,7 @@ namespace VimCommons.Stacking.Runtime
         {
             var posFrom = stackable.Transform.position;
             var rotFrom = stackable.Transform.eulerAngles;
-            var posTo = Transform.position + Vector3.up + Transform.rotation * GridPos(Count, table.x, table.y);
+            var posTo = Transform.position+ Transform.rotation * GridPos(Count, table.x, table.y);
             var rotTo = Transform.eulerAngles + Vector3.up * Random.Range(-5, 5);
 
             Content.Push(stackable);
@@ -46,7 +47,7 @@ namespace VimCommons.Stacking.Runtime
 
             EZ.Spawn().Tween(ez =>
             {
-                stackable.Transform.position = Vector3.Lerp(posFrom, posTo, ez.QuadIn);
+                stackable.Transform.position = Helper.LerpParabolic(posFrom, posTo, ez.QuadIn);
                 stackable.Transform.eulerAngles = Vector3.Lerp(rotFrom, rotTo, ez.QuadIn);
             });
         }

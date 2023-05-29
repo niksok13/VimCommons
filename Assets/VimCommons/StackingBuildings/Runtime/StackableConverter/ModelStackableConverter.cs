@@ -26,13 +26,14 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
         private ObservableDictionary<StackableDefinition, int> StackableCount { get; } = new();
         public ObservableData<bool> IsWork { get; } = new();
         public ObservableData<bool> CanInteract { get; } = new();
-        
-        public Stack<ModelStackable> result = new();
+
+        public Stack<ModelStackable> Result { get; } = new();
 
         private float _timer;
 
         public void Update()
         {
+            if (NodeLevel.Value < 1) return;
             TickTopup();
             TickWithdraw();
             TickConversion();
@@ -41,31 +42,30 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
 
         private void TickTrigger()
         {
-            CanInteract.Value = result.Count > 0;
+            CanInteract.Value = Result.Count > 0;
         }
 
         private void TickWithdraw()
         {
-            if (result.Count < 1) return;
-            var top = result.Pop();
+            if (Result.Count < 1) return;
+            var top = Result.Pop();
             foreach (var stack in Stacks)
             {
                 if (!Helper.WithinRadius(stack.Transform, Transform, radius)) continue;
                 if (stack.Push(top)) return;
             }
-            result.Push(top);
+            Result.Push(top);
         }
 
         private void TickTopup()
         {
-            if (NodeLevel.Value < 1) return;
             foreach (var entry in LevelData.conversionFormula.source)
             {
                 if (StackableCount[entry.type] >= entry.capacity) continue;
                 foreach (var stack in Stacks)
                 {
                     if (!Helper.WithinRadius(stack.Transform, Transform, radius)) continue;
-                    var stackable = stack.Peek(entry.type);
+                    var stackable = stack.Pop(entry.type);
                     if (stackable)
                     {
                         var posTo = Transform.position;
@@ -79,7 +79,6 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
 
         private void TickConversion()
         {
-            if (NodeLevel.Value < 1) return;
             foreach (var entry in LevelData.conversionFormula.source)
             {
                 if (StackableCount[entry.type] < entry.requirement)
@@ -101,23 +100,26 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
 
         private void FinishConversion()
         {
-            if (NodeLevel.Value < 1) return;
             foreach (var entry in LevelData.conversionFormula.source) 
                 StackableCount[entry.type] -= entry.requirement;
-
-            var item = LevelData.conversionFormula.result.Spawn();
-            item.Init(unstackAnchor.position + unstackAnchor.up * unstackStep * result.Count);
-            item.Transform.rotation = unstackAnchor.rotation;
-            result.Push(item);
+            DropResult();
         }
 
-        public bool HaveResult() => result.Count > 0;
+        private void DropResult()
+        {
+            var stackable = LevelData.conversionFormula.result.Spawn();
+            stackable.Init(unstackAnchor.position + unstackAnchor.up * unstackStep * Result.Count);
+            stackable.Transform.rotation = unstackAnchor.rotation;
+            Result.Push(stackable);
+        }
 
-        public bool IsEmpty() => result.Count < 1;
+        public bool HaveResult() => Result.Count > 0;
+
+        public bool IsEmpty() => Result.Count < 1;
 
         public void Clear()
         {
-            while (result.TryPop(out var item)) item.Remove();
+            while (Result.TryPop(out var item)) item.Remove();
         }
     }
 }

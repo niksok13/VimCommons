@@ -7,8 +7,8 @@ namespace VimCommons.Looting.Runtime.Runner
 {
     public class ServiceLootSystemRunner : MonoBehaviour
     {
-        private static readonly Filter<Lootable> Lootables = Locator.Filter<Lootable>();
-        private static readonly Filter<ModelLootableStack> Stacks = Locator.Filter<ModelLootableStack>();
+        private static readonly Filter<ModelLootable> Lootables = Locator.Filter<ModelLootable>();
+        private static readonly Filter<ModelLootableBatch> Stacks = Locator.Filter<ModelLootableBatch>();
         private static readonly Filter<LooterComponent> Looters = Locator.Filter<LooterComponent>();
         public void Awake() => LoopUtil.PreUpdate += Tick;
         private void OnDestroy() => LoopUtil.PreUpdate -= Tick;

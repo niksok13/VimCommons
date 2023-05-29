@@ -18,6 +18,7 @@ namespace VimCommons.Stacking.Runtime
         private void OnDisable() => Filter.Remove(this);
 
         private static readonly Filter<StackInteractor> Interactors = Locator.Filter<StackInteractor>();
+        private static readonly Filter<ModelStackableBatch> Batches = Locator.Filter<ModelStackableBatch>();
         
         private Transform _transform;
         public Transform Transform => _transform ??= transform;
@@ -29,13 +30,13 @@ namespace VimCommons.Stacking.Runtime
         
         private void Update()
         {
-            foreach (var item in Interactors) 
-                item.Interact(this);
+            foreach (var interactor in Interactors) interactor.Interact(this);
+            foreach (var batch in Batches) batch.Tick(this);
         }
 
         private void LateUpdate()
         {
-            var voffset = 0f;
+            var vOffset = 0f;
             var anchor = Transform.position;
             var up = Transform.up;
             var delta = LoopUtil.Delta;
@@ -43,9 +44,9 @@ namespace VimCommons.Stacking.Runtime
             for (var i = 0; i < _stack.Count; i++)
             {
                 var item = _stack[i];
-                var targetPos = anchor + up * voffset;
-                voffset += item.height;
-                var lerpArg = delta * 30 / (voffset + 1);
+                var targetPos = anchor + up * vOffset;
+                vOffset += item.height;
+                var lerpArg = delta * 30 / (vOffset + 1);
                 _items[i] = Vector3.Lerp(_items[i], targetPos, lerpArg);
                 item.Transform.position = _items[i];
                 item.Transform.rotation = rot;
@@ -119,7 +120,7 @@ namespace VimCommons.Stacking.Runtime
             return true;
         }
 
-        public ModelStackable Peek(params StackableDefinition[] needs)
+        public ModelStackable Pop(params StackableDefinition[] needs)
         {
             foreach (var stackable in _stack)
                 if (needs.Contains(stackable.Definition))

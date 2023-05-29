@@ -14,7 +14,7 @@ namespace VimCommons.StackingBuildings.Runtime.StackableRecycler
         public void OnStack(SignalStackInteract signal)
         {
             var stack = signal.Stack;
-            var stackable = stack.Peek(recyclable);
+            var stackable = stack.Pop(recyclable);
             if (!stackable) return;
             var unstackPoint = Transform.position;
             stackable.TweenRemove(unstackPoint);

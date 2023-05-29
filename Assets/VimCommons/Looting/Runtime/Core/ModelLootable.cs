@@ -1,17 +1,18 @@
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
+using VimCore.Runtime.MVVM;
 using VimCore.Runtime.Utils;
 
 namespace VimCommons.Looting.Runtime.Core
 {
-    public class Lootable : MonoBehaviour
+    public class ModelLootable : ModelBehaviour
     {
         public LootableDefinition Definition { get; private set; }
 
         private Transform _transform;
         public Transform Transform => _transform ??= transform;
         
-        private static readonly Filter<Lootable> Filter = Locator.Filter<Lootable>();        
+        private static readonly Filter<ModelLootable> Filter = Locator.Filter<ModelLootable>();        
         
 
         public void Init(LootableDefinition definition)

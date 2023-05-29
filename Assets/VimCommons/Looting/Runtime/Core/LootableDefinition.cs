@@ -9,16 +9,16 @@ namespace VimCommons.Looting.Runtime.Core
     [CreateAssetMenu]
     public class LootableDefinition: ScriptableObjectWithGuid
     {
-        public Lootable prefab;
+        public ModelLootable prefab;
         public Sprite icon;
         public string iconLabel;
         
-        private static readonly Filter<Lootable> Filter = Locator.Filter<Lootable>();
+        private static readonly Filter<ModelLootable> Filter = Locator.Filter<ModelLootable>();
 
-        private PrefabPool<Lootable> _pool;
-        public PrefabPool<Lootable> Pool => _pool ??= PrefabPool<Lootable>.Instance(prefab);
+        private PrefabPool<ModelLootable> _pool;
+        public PrefabPool<ModelLootable> Pool => _pool ??= PrefabPool<ModelLootable>.Instance(prefab);
         
-        public Lootable Spawn()
+        public ModelLootable Spawn()
         {
             var instance = Pool.Spawn();
             instance.Init(this);
@@ -39,7 +39,7 @@ namespace VimCommons.Looting.Runtime.Core
             });
         }
 
-        public void Remove(Lootable lootable, Transform target)
+        public void Remove(ModelLootable lootable, Transform target)
         {
             Filter.Remove(lootable);
             var from = lootable.Transform.position;

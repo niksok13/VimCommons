@@ -9,14 +9,14 @@ using Random = UnityEngine.Random;
 
 namespace VimCommons.Looting.Runtime.Core
 {
-    public class ModelLootableStack: ModelBehaviour
+    public class ModelLootableBatch: ModelBehaviour
     {        
         public int maxAmount = 50;
         public float lootRadius = 2;
         public Vector3 size = new(0.6f,0.15f,1.2f);
 
         public LootableDefinition type;
-        private static readonly Filter<ModelLootableStack> Filter = Locator.Filter<ModelLootableStack>();
+        private static readonly Filter<ModelLootableBatch> Filter = Locator.Filter<ModelLootableBatch>();
 
         private void OnEnable() => Filter.Add(this);
         private void OnDisable() => Filter.Remove(this);
@@ -25,7 +25,7 @@ namespace VimCommons.Looting.Runtime.Core
         public Transform Transform => _transform ??= transform;
         
         
-        private readonly Stack<Lootable> _stack = new();
+        private readonly Stack<ModelLootable> _stack = new();
         public int Count => _stack.Count;
 
         private ObservableData<int> Amount { get; } = new();

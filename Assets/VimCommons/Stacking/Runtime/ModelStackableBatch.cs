@@ -43,7 +43,7 @@ namespace VimCommons.Stacking.Runtime
         }
 
 
-        private void Append(ModelStackable stackable)
+        public void Push(ModelStackable stackable)
         {
             if (Amount.Value >= maxAmount) return;
             Amount.Value += 1;

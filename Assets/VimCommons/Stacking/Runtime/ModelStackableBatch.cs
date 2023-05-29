@@ -59,7 +59,6 @@ namespace VimCommons.Stacking.Runtime
                 Amount.Value -= 1;
                 var from = lootable.Transform.position;
                 EZ.Spawn().Tween(ez => {
-                    lootable.Transform.localScale = Vector3.one * ez.BackOut;
                     lootable.Transform.position = Helper.LerpParabolic(from, stack.Transform.position + Vector3.up, ez.Linear);
                 }).Call(_ =>  {
                     stack.Push(lootable);

@@ -6,13 +6,13 @@ namespace VimCommons.Looting.Runtime.Core
 {
     public class LooterComponent:  ASignalEmitter<SignalLoot>
     {
+        public float lootDistance = 2;
+
         private static readonly Filter<ModelLootable> Lootables = Locator.Filter<ModelLootable>();
         private static readonly Filter<ModelLootableBatch> Batches = Locator.Filter<ModelLootableBatch>();
 
         private Transform _transform;
         public Transform Transform => _transform ??= transform;
-
-        public float lootDistance = 2;
 
         internal void Loot(LootableDefinition type) => Emit(new SignalLoot(type));
 

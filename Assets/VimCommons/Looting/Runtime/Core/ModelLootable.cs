@@ -14,7 +14,6 @@ namespace VimCommons.Looting.Runtime.Core
         
         private static readonly Filter<ModelLootable> Filter = Locator.Filter<ModelLootable>();        
         
-
         public void Init(LootableDefinition definition)
         {
             Definition = definition;
@@ -23,7 +22,6 @@ namespace VimCommons.Looting.Runtime.Core
         }
 
         public void Remove() => Definition.Remove(this, Transform);
-
 
         public void Tick(LooterComponent looter)
         {

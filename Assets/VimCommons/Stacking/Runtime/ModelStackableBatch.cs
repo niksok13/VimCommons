@@ -10,6 +10,8 @@ namespace VimCommons.Stacking.Runtime
         private Transform _transform;
         public Transform Transform => _transform ??= transform;
         
+        public Vector3 size = Vector3.one;
+        public Vector2Int table = new(2, 2);
         private Stack<ModelStackable> Content { get; } = new();
         public int Count => Content.Count;
 
@@ -40,7 +42,7 @@ namespace VimCommons.Stacking.Runtime
 
             var posFrom = stackable.Transform.position;
             var rotFrom = stackable.Transform.eulerAngles;
-            var posTo = Transform.position + Vector3.up * Count * stackable.height;
+            var posTo = Transform.position + Vector3.up + Transform.rotation * GridPos(Count, table.x, table.y);
             var rotTo = Transform.eulerAngles + Vector3.up * Random.Range(-5, 5);
             
             EZ.Spawn().Tween(ez =>
@@ -48,6 +50,22 @@ namespace VimCommons.Stacking.Runtime
                 stackable.Transform.position = Vector3.Lerp(posFrom, posTo, ez.QuadIn);
                 stackable.Transform.eulerAngles = Vector3.Lerp(rotFrom, rotTo, ez.QuadIn);
             });
+        }
+        
+
+        private Vector3 GridPos(int a, int dimB, int dimC)
+        {
+            var b = a % dimB;
+            a /= dimB;
+            var c = a % dimC;
+            a /= dimC;
+
+            var grid = new Vector3(
+                c - 0.5f * (dimC - 1), 
+                a, 
+                b - 0.5f * (dimB - 1));
+
+            return Vector3.Scale(grid,size);
         }
 
         public void OnStack(SignalStackInteract signal)

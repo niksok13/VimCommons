@@ -18,7 +18,6 @@ namespace VimCommons.Stacking.Runtime
         private void OnDisable() => Filter.Remove(this);
 
         private static readonly Filter<StackInteractor> Interactors = Locator.Filter<StackInteractor>();
-        private static readonly Filter<ModelStackableBatch> Batches = Locator.Filter<ModelStackableBatch>();
         
         private Transform _transform;
         public Transform Transform => _transform ??= transform;
@@ -31,7 +30,6 @@ namespace VimCommons.Stacking.Runtime
         private void Update()
         {
             foreach (var interactor in Interactors) interactor.Interact(this);
-            foreach (var batch in Batches) batch.Tick(this);
         }
 
         private void LateUpdate()

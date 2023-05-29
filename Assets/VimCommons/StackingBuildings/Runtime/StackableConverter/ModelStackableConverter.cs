@@ -10,11 +10,6 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
     {
         public Transform unstackAnchor;
         public ModelStackableBatch batch;
-
-        private static readonly Filter<ModelStackableConverter> Filter = Locator.Filter<ModelStackableConverter>();
-        private void OnEnable() => Filter.Add(this);
-        private void OnDisable() => Filter.Remove(this);
-        
         
         private Transform _transform;
         public Transform Transform => _transform ??= transform;

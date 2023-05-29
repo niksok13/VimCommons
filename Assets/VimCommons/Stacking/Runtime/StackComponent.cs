@@ -10,8 +10,8 @@ namespace VimCommons.Stacking.Runtime
 {
     public class StackComponent: MonoBehaviour
     {
-        public bool ignoreCooldown;
         public int capacity = 4;
+        public float cooldown = 0.1f;
 
         private static readonly Filter<StackComponent> Filter = Locator.Filter<StackComponent>();
         private void OnEnable() => Filter.Add(this);
@@ -25,10 +25,13 @@ namespace VimCommons.Stacking.Runtime
         private readonly List<ModelStackable> _stack = new();
         private readonly Vector3[] _items = new Vector3[300];
         private int _pending;
-        private float _timeout;
-        
+        private float _readyTime;
+
         private void Update()
         {
+            if (Time.realtimeSinceStartup < _readyTime) return;
+            _readyTime = Time.realtimeSinceStartup + cooldown;
+            
             foreach (var interactor in Interactors) interactor.Interact(this);
         }
 
@@ -55,15 +58,6 @@ namespace VimCommons.Stacking.Runtime
 
         public bool Full => Count + _pending >= capacity;
         public int Count => _stack.Count;
-
-        public bool Ready(float cooldown)
-        {
-            if (ignoreCooldown) return true;
-            _timeout += Time.deltaTime;
-            if (_timeout < cooldown) return false;
-            _timeout = 0;
-            return true;
-        }
         
         private int CalculateWeight()
         {
@@ -93,11 +87,8 @@ namespace VimCommons.Stacking.Runtime
             return _stack.Any(i => variants.Contains(i.Definition));
         }
 
-        public bool Push(ModelStackable res)
+        public void Push(ModelStackable res)
         {
-            if (!HaveSpace(res.Weight)) return false;
-            if (!res.Ready) return false;
-            res.Pick();
             var posFrom = res.Transform.position;
             var rotFrom = res.Transform.rotation;
             _pending += res.Weight;
@@ -113,7 +104,6 @@ namespace VimCommons.Stacking.Runtime
                 _stack.Add(res);
                 OnUpdate?.Invoke(_stack);
             });
-            return true;
         }
 
         public ModelStackable Pop(params StackableDefinition[] needs)

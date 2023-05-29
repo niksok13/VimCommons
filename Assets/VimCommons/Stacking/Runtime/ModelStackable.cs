@@ -11,13 +11,9 @@ namespace VimCommons.Stacking.Runtime
         private Transform _transform;
         public Transform Transform => _transform ??= transform;
 
-
         public StackableDefinition Definition { get; set; }
         public int Weight => Definition.weight;
 
-        public bool Ready { get; private set; }
-        
-        
         public void Build(StackableDefinition definition)
         {
             Definition = definition;
@@ -35,29 +31,12 @@ namespace VimCommons.Stacking.Runtime
                 var t = ez.Linear;
                 Transform.localPosition = Helper.LerpParabolic(posSrc, posDest, t, 2);
                 Transform.localScale = Vector3.one * ez.BackOut;
-            }).Call(_ =>
-            {
-                Ready = true;
             });
-
         }
-
 
         public void Init(Vector3 posSrc)
         {
             Transform.position = posSrc;
-            Ready = true;
-        }
-        
-        public void Pick()
-        {
-            Ready = false;
-        }
-
-        public void Remove()
-        {
-            Pick();
-            Definition.Remove(this);
         }
         
         public void TweenRemove(Vector3 posTo)
@@ -67,9 +46,9 @@ namespace VimCommons.Stacking.Runtime
             {
                 Transform.localScale = Vector3.one * (1 - ez.BackIn / 2);
                 Transform.localPosition = Helper.LerpParabolic(posFrom, posTo, ez.QuadIn);
-            }).Call(Remove);
+            }).Call(_ => Remove());
         }
-
-        private void Remove(EZData ez) => Remove();
+        
+        public void Remove() => Definition.Remove(this);
     }
 }

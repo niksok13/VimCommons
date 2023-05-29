@@ -33,8 +33,7 @@ namespace VimCommons.Stacking.Runtime
             Label.Value = obj.ToString();
             Bounce.Invoke();
         }
-
-
+        
         public void Push(ModelStackable stackable)
         {
             var posFrom = stackable.Transform.position;
@@ -52,7 +51,6 @@ namespace VimCommons.Stacking.Runtime
             });
         }
         
-
         private Vector3 GridPos(int a, int dimB, int dimC)
         {
             var b = a % dimB;
@@ -71,14 +69,11 @@ namespace VimCommons.Stacking.Runtime
         public void OnStack(SignalStackInteract signal)
         {
             var stack = signal.Stack;
-            if (Content.TryPeek(out var stackable))
-            {
-                if (stack.Push(stackable))
-                {
-                    Amount.Value -= 1;
-                    Content.Pop();
-                }
-            }
+            if (!Content.TryPeek(out var stackable)) return;
+            if (!stack.HaveSpace(stackable.Weight)) return;
+            stack.Push(stackable);
+            Amount.Value -= 1;
+            Content.Pop();
         }
     }
 }

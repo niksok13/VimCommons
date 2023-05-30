@@ -10,6 +10,8 @@ namespace VimCommons.StackingBuildings.Runtime.StackableSource
         public StackableDefinition result;
         public Transform unstackAnchor;
         public ModelStackableBatch batch;
+
+        public bool Muted { get; set; }
         
         public ObservableData<bool> IsWork { get; } = new();
 
@@ -17,6 +19,7 @@ namespace VimCommons.StackingBuildings.Runtime.StackableSource
 
         public void Update()
         {
+            if (Muted) return;
             if (NodeLevel.Value < 1) return;
             TickConversion();
         }

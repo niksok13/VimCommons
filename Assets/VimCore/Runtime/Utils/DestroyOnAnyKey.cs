@@ -2,11 +2,11 @@ using UnityEngine;
 
 namespace VimCore.Runtime.Utils
 {
-    public class ComponentDestroyOnAnyKey : MonoBehaviour
+    public class DestroyOnAnyKey : MonoBehaviour
     {
         private void Update()
         {
-            if(UnityEngine.Input.anyKey)
+            if(Input.anyKey)
                 Destroy(gameObject);
         }
     }

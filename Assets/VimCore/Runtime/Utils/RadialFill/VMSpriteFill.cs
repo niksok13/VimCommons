@@ -5,8 +5,9 @@ namespace VimCore.Runtime.Utils.RadialFill
 {
     public class VMSpriteFill : AViewModel<float, SpriteRenderer>
     {
-        private const string key = "_Arc1";
         public bool invert;
+
+        private static readonly int Arc1 = Shader.PropertyToID("_Arc1");
 
         protected override void OnValue(float value)
         {
@@ -14,7 +15,7 @@ namespace VimCore.Runtime.Utils.RadialFill
                 value = 1 - value;
         
             var angle = Mathf.Lerp(0, 360, value);
-            Component.material.SetFloat(key,angle);
+            Component.material.SetFloat(Arc1, angle);
         }
 
     }

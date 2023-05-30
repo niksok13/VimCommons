@@ -59,7 +59,7 @@ namespace VimCore.Runtime.Utils
             return result;
         }
 
-        public static float SqrDistance(Vector3 pos1, Vector3 pos2)
+        private static float SqrDistance(Vector3 pos1, Vector3 pos2)
         {
             var dx = pos1.x - pos2.x;
 //            var dy = pos1.y - pos2.y;

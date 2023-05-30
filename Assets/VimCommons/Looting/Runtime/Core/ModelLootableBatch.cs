@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.EZTween;
@@ -12,17 +11,18 @@ namespace VimCommons.Looting.Runtime.Core
     public class ModelLootableBatch: ModelBehaviour
     {        
         public int maxAmount = 50;
-        public float lootRadius = 2;
         public Vector3 size = new(0.6f,0.15f,1.2f);
-
         public LootableDefinition type;
+        
         private static readonly Filter<ModelLootableBatch> Filter = Locator.Filter<ModelLootableBatch>();
-
         private void OnEnable() => Filter.Add(this);
         private void OnDisable() => Filter.Remove(this);
         
         private Transform _transform;
         public Transform Transform => _transform ??= transform;
+
+        private Collider _collider;
+        public Collider Collider => _collider ??= GetComponent<Collider>(); 
         
         
         private readonly Stack<ModelLootable> _stack = new();
@@ -89,11 +89,11 @@ namespace VimCommons.Looting.Runtime.Core
         public void Tick(LooterComponent looter)
         {
             if (Count < 1) return;
-            if (!Helper.WithinRadius(Transform, looter.Transform, lootRadius)) return;
+            if (!Collider.bounds.Contains(looter.Transform.position)) return;
             Collect(looter);
         }
         
-        public async void Collect(LooterComponent looter)
+        public void Collect(LooterComponent looter)
         {
             foreach (var lootable in _stack)
             {
@@ -103,13 +103,11 @@ namespace VimCommons.Looting.Runtime.Core
                     lootable.Transform.position = Helper.LerpParabolic(from, looter.Transform.position + Vector3.up, ez.Linear);
                 }).Call(item =>  {
                     lootable.Remove();
+                    looter.Loot(type);
+                    Amount.Value -= 1;
                 });
             }
             _stack.Clear();
-            await UniTask.Delay(300, DelayType.UnscaledDeltaTime);
-            for (int i = 0; i < Amount.Value; i++) 
-                looter.Loot(type);
-            Amount.Value = 0;
         }
 
     }

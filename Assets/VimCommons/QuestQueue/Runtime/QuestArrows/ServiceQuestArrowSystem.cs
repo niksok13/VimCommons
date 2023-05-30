@@ -5,12 +5,12 @@ using VimCore.Runtime.Pooling;
 
 namespace VimCommons.QuestQueue.Runtime.QuestArrows
 {
-    public class ServiceNavigationPointerSystem : MonoBehaviour, INavigationPointerSystem
+    public class ServiceQuestArrowSystem : MonoBehaviour, IQuestArrowSystem
     {
         public LineRenderer arrowPrefab;
         public float vOffset = 1;
 
-        private static readonly ServiceContainer<INavigationPointerSystem> Container = Locator.Single<INavigationPointerSystem>();
+        private static readonly ServiceContainer<IQuestArrowSystem> Container = Locator.Single<IQuestArrowSystem>();
         public void Awake() => Container.Attach(this);
         private void OnDestroy() => Container.Detach(this);
 
@@ -35,7 +35,7 @@ namespace VimCommons.QuestQueue.Runtime.QuestArrows
         private void RemoveTarget(Transform target)
         {
             if (_data.Remove(target, out var arrow)) 
-                _pool.Remove(arrow);
+                Pool.Remove(arrow);
         }
         
         private void RunArrow(Transform target, LineRenderer arrow)
@@ -64,7 +64,7 @@ namespace VimCommons.QuestQueue.Runtime.QuestArrows
         private void AddTarget(Transform target)
         {
             if (_data.ContainsKey(target)) return; 
-            var newArr = _pool.Spawn();
+            var newArr = Pool.Spawn();
             newArr.transform.localScale = Vector3.one;
             newArr.positionCount = 2;
 

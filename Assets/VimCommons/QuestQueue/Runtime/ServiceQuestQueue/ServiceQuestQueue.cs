@@ -14,7 +14,7 @@ namespace VimCommons.QuestQueue.Runtime.ServiceQuestQueue
     {
         private static readonly ServiceContainer<IQuestQueue> Container = Locator.Single<IQuestQueue>();
 
-        private static INavigationPointerSystem NavigationPointerSystem => Locator.Resolve<INavigationPointerSystem>();
+        private static IQuestArrowSystem QuestArrowSystem => Locator.Resolve<IQuestArrowSystem>();
         private static ICamera Camera => Locator.Resolve<ICamera>();
         private static IAnalytics Analytics => Locator.Resolve<IAnalytics>();
         private static IUIQuestQueue UIQuestQueue => Locator.Resolve<IUIQuestQueue>();
@@ -82,14 +82,14 @@ namespace VimCommons.QuestQueue.Runtime.ServiceQuestQueue
             if (_current.Done)
             {
                 UIQuestQueue.ClaimVisible.Value = true;
-                NavigationPointerSystem.Remove(_current.arrowTargets);
+                QuestArrowSystem.Remove(_current.arrowTargets);
                 if (_current.autoClaim) 
                     CompleteQuest(true);
             }
             else
             {
                 UIQuestQueue.ClaimVisible.Value = false;
-                NavigationPointerSystem.Add(_current.arrowTargets);
+                QuestArrowSystem.Add(_current.arrowTargets);
             }
         }
 

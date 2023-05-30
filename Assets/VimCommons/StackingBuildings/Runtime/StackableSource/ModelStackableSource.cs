@@ -25,7 +25,7 @@ namespace VimCommons.StackingBuildings.Runtime.StackableSource
 
         private void TickConversion()
         {
-            IsWork.Value = batch.Count>LevelData.maxAmount;
+            IsWork.Value = batch.Count > LevelData.maxAmount;
             
             if (!IsWork.Value) return;
             

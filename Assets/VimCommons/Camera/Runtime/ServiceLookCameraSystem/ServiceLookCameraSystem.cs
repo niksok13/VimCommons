@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Jobs;
 using VimCommons.Camera.Runtime.ServiceCamera;
 using VimCore.Runtime.DependencyManagement;
-using VimCore.Runtime.Utils;
 
 namespace VimCommons.Camera.Runtime.ServiceLookCameraSystem
 {
@@ -15,21 +14,11 @@ namespace VimCommons.Camera.Runtime.ServiceLookCameraSystem
         
         private JobHandle _jobHandle;
         private TransformAccessArray _native;
-        private void Awake()
-        {
-            LoopUtil.PreUpdate += Tick;
-            LoopUtil.PostLateUpdate += LateTick;
-            TickNative();
-        }
+        private void Start() => TickNative();
 
-        private void OnDestroy()
-        {
-            _native.Dispose();
-            LoopUtil.PreUpdate -= Tick;
-            LoopUtil.PostLateUpdate -= LateTick;
-        }
+        private void OnDestroy() => _native.Dispose();
 
-        private void Tick()
+        private void Update()
         {
             var job = new LookCameraJob
             {
@@ -38,7 +27,7 @@ namespace VimCommons.Camera.Runtime.ServiceLookCameraSystem
             _jobHandle = job.Schedule(_native);
         }
 
-        private void LateTick()
+        private void LateUpdate()
         {
             _jobHandle.Complete();
             if (Time.frameCount % 16 > 0) return;

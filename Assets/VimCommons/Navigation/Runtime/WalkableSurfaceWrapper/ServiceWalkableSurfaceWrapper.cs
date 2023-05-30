@@ -1,44 +1,34 @@
 using Unity.AI.Navigation;
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
-using VimCore.Runtime.Utils;
 
 namespace VimCommons.Navigation.Runtime.WalkableSurfaceWrapper
 {
     public class ServiceWalkableSurfaceWrapper : MonoBehaviour, IWalkableSurfaceWrapper
     {
         private static readonly ServiceContainer<IWalkableSurfaceWrapper> Container = Locator.Single<IWalkableSurfaceWrapper>();
+        private void Awake() => Container.Attach(this);
+        private void OnDestroy() => Container.Detach(this);
 
+        private NavMeshSurface _surface;
+        public NavMeshSurface Surface => _surface ??= GetComponent<NavMeshSurface>();
+        
         private float _timeout; 
         private bool _dirty;
-        private NavMeshSurface _surface;
 
+        private void Start() => Surface.BuildNavMesh();
 
-        public void SetDirty() => _dirty = true;
-
-        private void Awake()
-        {
-            Container.Attach(this);
-            _surface = GetComponent<NavMeshSurface>();
-            _surface.BuildNavMesh();
-            LoopUtil.PreUpdate += Tick;
-        }
-
-        private void OnDestroy()
-        {
-            Container.Detach(this);
-            LoopUtil.PreUpdate -= Tick;
-        }
-
-        private void Tick()
+        private void Update()
         {
             _timeout -= Time.deltaTime;
             if (!_dirty) return;
             if (_timeout>0) return;
             _timeout = 1;
-            _surface.UpdateNavMesh(_surface.navMeshData);
+            Surface.UpdateNavMesh(Surface.navMeshData);
             _dirty = false;
         }
+        
+        public void SetDirty() => _dirty = true;
     }
 }
 

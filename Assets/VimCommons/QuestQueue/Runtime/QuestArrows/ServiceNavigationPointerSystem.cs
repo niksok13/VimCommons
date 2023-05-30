@@ -2,38 +2,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.Pooling;
-using VimCore.Runtime.Utils;
 
 namespace VimCommons.QuestQueue.Runtime.QuestArrows
 {
     public class ServiceNavigationPointerSystem : MonoBehaviour, INavigationPointerSystem
     {
-        private static readonly ServiceContainer<INavigationPointerSystem> Container = Locator.Single<INavigationPointerSystem>();
-
-        private readonly Dictionary<Transform, LineRenderer> _data = new();
-
+        public LineRenderer arrowPrefab;
         public float vOffset = 1;
 
-        public LineRenderer arrowPrefab;
+        private static readonly ServiceContainer<INavigationPointerSystem> Container = Locator.Single<INavigationPointerSystem>();
+        public void Awake() => Container.Attach(this);
+        private void OnDestroy() => Container.Detach(this);
 
+        public PrefabPool<LineRenderer> Pool => _pool ??= PrefabPool<LineRenderer>.Instance(arrowPrefab);
         private PrefabPool<LineRenderer> _pool;
+        
+        private readonly Dictionary<Transform, LineRenderer> _data = new();
         private Transform _anchorTransform;
 
-        public void Awake()
-        {
-            Container.Attach(this);
-            _pool = PrefabPool<LineRenderer>.Instance(arrowPrefab);
-            LoopUtil.PostLateUpdate += Tick;
-        }
-
-        private void OnDestroy()
-        {
-            Container.Detach(this);
-            LoopUtil.PostLateUpdate -= Tick;
-        }
-
-
-        private void Tick()
+        private void Update()
         {
             foreach (var (target, arrow) in _data)
             {
@@ -58,14 +45,14 @@ namespace VimCommons.QuestQueue.Runtime.QuestArrows
             var from = _anchorTransform.position;
             var to = target.position + Vector3.up * 3;
             
-            var a = Vector3.MoveTowards(from, to, 1);
-            var b = Vector3.MoveTowards(to, from, 1);
+            var trimFrom = Vector3.MoveTowards(from, to, 1);
+            var trimTo = Vector3.MoveTowards(to, from, 1);
             
-            a.y = vOffset;
-            b.y = vOffset;
+            trimFrom.y = vOffset;
+            trimTo.y = vOffset;
 
-            arrow.SetPosition(0, a);
-            arrow.SetPosition(1, b);
+            arrow.SetPosition(0, trimFrom);
+            arrow.SetPosition(1, trimTo);
         }
 
         public void Add(params Transform[] targets)

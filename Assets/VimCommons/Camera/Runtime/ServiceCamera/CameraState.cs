@@ -35,7 +35,7 @@ namespace VimCommons.Camera.Runtime.ServiceCamera
 
         public void Track(ServiceCamera cam)
         {
-            var tm = LoopUtil.Delta * speed;
+            var tm = speed * Time.deltaTime;
             cam.Transform.position = Vector3.Lerp(cam.Transform.position, Transform.position - Transform.forward * Distance, tm);
             cam.Transform.rotation = Quaternion.LerpUnclamped(cam.Transform.rotation, Transform.rotation, tm);
         }

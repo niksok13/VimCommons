@@ -1,6 +1,5 @@
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
-using VimCore.Runtime.Utils;
 
 namespace VimCommons.Navigation.Runtime.AgentConveyorSystem
 {
@@ -19,10 +18,11 @@ namespace VimCommons.Navigation.Runtime.AgentConveyorSystem
 
         public void Tick()
         {
+            var bounds = Hitbox.bounds;
             foreach (var agent in Agents)
             {
-                if(!Hitbox.bounds.Contains(agent.Position)) continue;
-                agent.Translate(direction * LoopUtil.Delta);
+                if(!bounds.Contains(agent.Position)) continue;
+                agent.Translate(direction * Time.deltaTime);
             }
         }
     }

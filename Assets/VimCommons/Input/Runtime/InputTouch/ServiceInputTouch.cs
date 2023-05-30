@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using VimCommons.Camera.Runtime.ServiceCamera;
 using VimCore.Runtime.DependencyManagement;
-using VimCore.Runtime.Utils;
 
 namespace VimCommons.Input.Runtime.InputTouch
 {
@@ -30,13 +29,11 @@ namespace VimCommons.Input.Runtime.InputTouch
             Container.Attach(this);
             anchor.gameObject.SetActive(false);
             stick.gameObject.SetActive(false);
-            LoopUtil.PreUpdate += Tick;
         }
 
         private void OnDestroy()
         {
             Container.Detach(this);
-            LoopUtil.PreUpdate -= Tick;
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -97,7 +94,7 @@ namespace VimCommons.Input.Runtime.InputTouch
 
         public void Release() => OnPointerUp(null);
 
-        private void Tick()
+        private void Update()
         {
             if (Equals(null, _listener)) return;
             var x = UnityEngine.Input.GetAxis("Horizontal");

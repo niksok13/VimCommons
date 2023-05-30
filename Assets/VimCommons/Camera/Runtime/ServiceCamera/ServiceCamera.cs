@@ -18,19 +18,11 @@ namespace VimCommons.Camera.Runtime.ServiceCamera
         private CameraState _state;
         private CameraState _tempState;
         private CameraState State => _tempState ? _tempState : _state;
-        private void Awake()
-        {
-            Container.Attach(this);
-            LoopUtil.PostLateUpdate += Tick;
-        }
+        private void Awake() => Container.Attach(this);
 
-        private void OnDestroy()
-        {
-            Container.Detach(this);
-            LoopUtil.PostLateUpdate -= Tick;
-        }
+        private void OnDestroy() => Container.Detach(this);
 
-        private void Tick()
+        private void LateUpdate()
         {
             if (!State) return;
             State.Track(this);

@@ -40,14 +40,13 @@ namespace VimCommons.Stacking.Runtime
             var vOffset = 0f;
             var anchor = Transform.position;
             var up = Transform.up;
-            var delta = LoopUtil.Delta;
             var rot = Transform.rotation;
             for (var i = 0; i < _stack.Count; i++)
             {
                 var item = _stack[i];
                 var targetPos = anchor + up * vOffset;
                 vOffset += item.height;
-                var lerpArg = delta * 30 / (vOffset + 1);
+                var lerpArg = Time.deltaTime * 30 / (vOffset + 1);
                 _items[i] = Vector3.Lerp(_items[i], targetPos, lerpArg);
                 item.Transform.position = _items[i];
                 item.Transform.rotation = rot;

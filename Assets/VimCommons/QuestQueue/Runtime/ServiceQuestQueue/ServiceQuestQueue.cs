@@ -7,7 +7,6 @@ using VimCommons.QuestQueue.Runtime.UIQuestQueue;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.EZTween;
 using VimCore.Runtime.MVVM;
-using VimCore.Runtime.Utils;
 
 namespace VimCommons.QuestQueue.Runtime.ServiceQuestQueue
 {
@@ -33,7 +32,6 @@ namespace VimCommons.QuestQueue.Runtime.ServiceQuestQueue
             _quests = _quests.OrderBy(i => i.Transform.GetSiblingIndex()).ToArray();
             QuestProgress.ConnectPref("QuestProgress");
             InitQuest();
-            LoopUtil.PreUpdate += Tick;
         }
 
         private void OnDestroy()
@@ -41,7 +39,6 @@ namespace VimCommons.QuestQueue.Runtime.ServiceQuestQueue
             UIQuestQueue.Visible.Value = false;
 
             Container.Detach(this);
-            LoopUtil.PreUpdate += Tick;
         }
 
         private void InitQuest(EZData ez = default)
@@ -68,7 +65,7 @@ namespace VimCommons.QuestQueue.Runtime.ServiceQuestQueue
             _current.Enter();
         }
 
-        private void Tick()
+        private void Update()
         {
             if (!_current) return;
             switch (_current)

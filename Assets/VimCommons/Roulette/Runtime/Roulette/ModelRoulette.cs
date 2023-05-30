@@ -49,7 +49,7 @@ namespace VimCommons.Roulette.Runtime.Roulette
             EZ.Spawn().Tween(spinDuration, ez =>
             {
                 var deceleration = 1 - ez.QuadOut;
-                var spinStep = deceleration * LoopUtil.Delta;
+                var spinStep = deceleration * Time.deltaTime;
                 RouletteAngle.Value += spinStep * curSpeed;
             }).Call(FinishSpin);
         }

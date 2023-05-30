@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
-using VimCore.Runtime.Utils;
 
 namespace VimCommons.Input.Runtime.InputKey
 {
@@ -12,19 +11,11 @@ namespace VimCommons.Input.Runtime.InputKey
 
         private Dictionary<KeyCode, Action> Listeners { get; } = new();
 
-        private void Awake()
-        {
-            Container.Attach(this);
-            LoopUtil.PreUpdate += Tick;
-        }
+        private void Awake() => Container.Attach(this);
 
-        private void OnDestroy()
-        {
-            Container.Detach(this);
-            LoopUtil.PreUpdate -= Tick;
-        }
+        private void OnDestroy() => Container.Detach(this);
 
-        private void Tick()
+        private void Update()
         {
             if (!UnityEngine.Input.anyKeyDown) return;
 

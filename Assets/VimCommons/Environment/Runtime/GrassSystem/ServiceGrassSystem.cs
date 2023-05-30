@@ -1,6 +1,5 @@
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
-using VimCore.Runtime.Utils;
 
 namespace VimCommons.Environment.Runtime.GrassSystem
 {
@@ -16,12 +15,8 @@ namespace VimCommons.Environment.Runtime.GrassSystem
 
         private Vector3 _curPos;
         private int _effCount;
-
-        private void Awake() => LoopUtil.PreUpdate += Tick;
-
-        private void OnDestroy() => LoopUtil.PreUpdate -= Tick;
-
-        private void Tick()
+        
+        private void Update()
         {
             _effCount = Mathf.Min(Effectors.Count, 20);
             var i = 0;

@@ -10,9 +10,6 @@ namespace VimCommons.Navigation.Runtime.Walker
     {
         public float walkSpeed =  5 ;
 
-        private float Speed => walkSpeed;
-
-        public ObservableData<float> MoveSpeed { get; } = new();
 
         private Transform _transform;
         public Transform Transform => _transform ??= transform.GetChild(0);
@@ -20,18 +17,17 @@ namespace VimCommons.Navigation.Runtime.Walker
         private NavMeshAgent _agent;
         private NavMeshAgent Agent => _agent ??= GetComponent<NavMeshAgent>();
         
+        private float Speed => walkSpeed;
+
+        public ObservableData<float> MoveSpeed { get; } = new();
+        
         private Vector3 _moveDirection;
 
-        private void Awake() => LoopUtil.PostLateUpdate += Tick;
-
-        private void OnDestroy() => LoopUtil.PostLateUpdate -= Tick;
-
-
-        public void Tick()
+        public void Update()
         {
             if (Time.timeScale < float.Epsilon) return;
             var dir = _moveDirection;
-            var speed = Speed * LoopUtil.Delta;
+            var speed = Speed * Time.deltaTime;
             if(Agent.isOnNavMesh)
                 Agent.Move(dir * speed);
         }

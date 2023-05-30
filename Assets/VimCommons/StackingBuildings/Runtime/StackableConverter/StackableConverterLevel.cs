@@ -7,9 +7,9 @@ using VimCommons.Stacking.Runtime;
 namespace VimCommons.StackingBuildings.Runtime.StackableConverter
 {
     [CreateAssetMenu]
-    public class StackableConversionFormula: ScriptableObject
+    public class StackableConverterLevel: ScriptableObject
     {
-        public List<StackableConversionFormulaEntry> source;
+        public List<StackableConverterFormulaEntry> source;
         public float duration;
         public StackableDefinition result;
     }

@@ -1,12 +1,11 @@
 using UnityEngine;
 using VimCommons.Progression.Runtime.Building;
 using VimCommons.Stacking.Runtime;
-using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
 
 namespace VimCommons.StackingBuildings.Runtime.StackableConverter
 {
-    public class ModelStackableConverter : ProgressionBuilding<StackableConversionFormula>
+    public class ModelStackableConverter : ProgressionBuilding<StackableConverterLevel>
     {
         public Transform unstackAnchor;
         public ModelStackableBatch batch;

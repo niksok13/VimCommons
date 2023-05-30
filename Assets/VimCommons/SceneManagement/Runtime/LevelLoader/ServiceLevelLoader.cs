@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using VimCore.Runtime.DependencyManagement;
 
-namespace VimCommons.SceneManagement.Runtime.ServiceLevelLoader
+namespace VimCommons.SceneManagement.Runtime.LevelLoader
 {
     public class ServiceLevelLoader : MonoBehaviour, ILevelLoader
     {

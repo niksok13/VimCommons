@@ -1,8 +1,9 @@
-using UnityEngine;
+using System;
 
 namespace VimCommons.StackingBuildings.Runtime.StackableSource
 {
-    public class StackableSourceLevel: ScriptableObject
+    [Serializable]
+    public struct StackableSourceLevel
     {
         public int maxAmount;
         public float cooldown;

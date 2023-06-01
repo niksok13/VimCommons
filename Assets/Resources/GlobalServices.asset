@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66a57398d0ab40c7bdbc1da5ae7ffe4, type: 3}
   m_Name: GlobalServices
   m_EditorClassIdentifier: 
-  gameCore: {fileID: 5084388027734850746, guid: 242a4db3467bc40148a156aa31c341b0, type: 3}
-  globalServices:
-  - {fileID: 4861105011189457770, guid: cd2f7bcdbde384b8093e172ae887a062, type: 3}
+  core: {fileID: 5084388027734850746, guid: 242a4db3467bc40148a156aa31c341b0, type: 3}
+  global:
   - {fileID: 1485254278315445882, guid: d94a60c5461b14e3c9095a7dc187289f, type: 3}
   - {fileID: 2263473932363655537, guid: cff15ed53d5f44163bd07625d21d4c09, type: 3}
-  - {fileID: 173353417133682755, guid: 4e32650ef501f48f2a473184d5c350fc, type: 3}
-  - {fileID: 2844963423520344903, guid: 2aadb68ec1ccc4b7186c8d9311ae1b54, type: 3}
-  debugServices:
+  - {fileID: 4861105011189457770, guid: cd2f7bcdbde384b8093e172ae887a062, type: 3}
+  debug:
   - {fileID: 8098851834664333768, guid: d43a812a767c14b46a1984a18d1004ea, type: 3}

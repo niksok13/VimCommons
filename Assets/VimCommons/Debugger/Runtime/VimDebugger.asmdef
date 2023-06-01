@@ -1,0 +1,19 @@
+{
+    "name": "VimDebugger",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3de88c88fbbb8f944b9210d496af9762",
+        "GUID:aa4058dcf7167417d87db96b2bd517a9",
+        "GUID:090a698f1327a4874b85940ad70f9768",
+        "GUID:607fb446e5549422397a8797a101254d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

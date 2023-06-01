@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using VimCommons.Ads.Runtime.InterstitialRunner;
 using VimCommons.Ads.Runtime.Rewarded;
-using VimCommons.Looting.Runtime.Animations;
 using VimCommons.Looting.Runtime.Core;
 using VimCommons.Looting.Runtime.Inventory;
 using VimCommons.Progression.Runtime.Node;
@@ -17,10 +16,7 @@ namespace VimCommons.Progression.Runtime.Trigger
     {      
         public ProgressionNode node;
         
-        [FormerlySerializedAs("labelBuild")]
-        [Space]
         public string label = "BUILD";
-        [FormerlySerializedAs("iconBuild")]
         public Sprite icon;
 
         public float duration = 3;
@@ -31,7 +27,6 @@ namespace VimCommons.Progression.Runtime.Trigger
         private void OnDisable() => Filter.Remove(this);
         
         private static IInterstitialRunner Interstitial => Locator.Resolve<IInterstitialRunner>();
-        private static ILootAnimations LootAnimations => Locator.Resolve<ILootAnimations>();
         private static IRewarded Rewarded => Locator.Resolve<IRewarded>();
         private static IInventory Inventory => Locator.Resolve<IInventory>();
 
@@ -101,8 +96,8 @@ namespace VimCommons.Progression.Runtime.Trigger
         {
             var upgradeCost = NextUpgrade.cost;
             if (!Inventory.TryPay(upgradeCost)) return;
-            foreach (var entry in upgradeCost) 
-                LootAnimations.Animate(entry, invoker.Transform, transform);
+            foreach (var entry in upgradeCost)
+                entry.Animate(invoker.Transform, transform);
 
             node.Upgrade();
             Interstitial?.ResetIdle();
@@ -117,7 +112,7 @@ namespace VimCommons.Progression.Runtime.Trigger
             foreach (var entry in upgradeCost)
             {
                 var bonus = new LootEntry(entry.type, Mathf.CeilToInt(entry.amount * 0.25f));
-                await LootAnimations.Animate(bonus, invoker.Transform, invoker.Transform);
+                bonus.Animate(invoker.Transform, invoker.Transform);
                 Inventory.Receive(bonus.type, bonus.amount);
             }
         }

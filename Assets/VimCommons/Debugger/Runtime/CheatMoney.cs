@@ -15,9 +15,6 @@ namespace VimCommons.Debugger.Runtime
         protected override string Command => command;
         protected override string Description => description;
 
-        protected override void OnApply(int amount)
-        {
-            Inventory.Receive(loot, amount);
-        }
+        protected override void OnApply(int amount) => Inventory.Receive(loot, amount);
     }
 }

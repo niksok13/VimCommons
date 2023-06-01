@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5610191519775457882}
   - component: {fileID: 1298878556570334127}
   m_Layer: 5
-  m_Name: BalanceCanvas
+  m_Name: UIInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace VimCommons.Looting.Runtime.Core
 {
@@ -13,5 +14,7 @@ namespace VimCommons.Looting.Runtime.Core
             this.type = type;
             this.amount = amount;
         }
+
+        public void Animate(Transform from, Transform to) => type.Animate(amount, from, to);
     }
 }

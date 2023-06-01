@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.EZTween;
@@ -49,6 +50,52 @@ namespace VimCommons.Looting.Runtime.Core
             }).Call(_ =>  {
                 Pool.Remove(lootable);
             });
+        }
+        
+
+        public async void Animate(int amount, Transform src, Transform dest)
+        {
+            var count = Mathf.Min(amount, 50);
+            var delay = 100;
+            for (var i = 0; i < count; i++)
+            {
+                await UniTask.Delay(delay, DelayType.UnscaledDeltaTime);
+                delay -= delay/5;
+                Animate(src, dest);
+            }
+        }
+
+        private void Animate(Transform from, Transform to)
+        {
+            var item = Spawn();
+
+            var srcPos = from.position + Vector3.up;
+            var srcRot = Random.rotation;
+
+            item.Transform.position = srcPos;
+            item.Transform.rotation = srcRot;
+            item.Transform.localScale = Vector3.zero;
+
+            var spread = Random.insideUnitSphere;
+            spread *= spread.magnitude;
+
+            var middlePos = Vector3.Lerp(from.position, to.position, 0.5f) + Vector3.up * 4 + spread * 2;
+            var middleRot = Random.rotation;
+
+            var destPos = to.position + Vector3.up;
+            var destRot = Random.rotation;
+
+            EZ.Spawn().Tween(ez =>
+            {
+                item.Transform.rotation = Quaternion.SlerpUnclamped(srcRot, middleRot, ez.QuadOut);
+                item.Transform.position = Helper.LerpParabolic(srcPos, middlePos, ez.QuadOut);
+                item.Transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, ez.Linear);
+            }).Tween(ez =>
+            {
+                item.Transform.position = Helper.LerpParabolic(middlePos, destPos, ez.QuadOut);
+                item.Transform.rotation = Quaternion.SlerpUnclamped(middleRot, destRot, ez.QuadOut);
+                item.Transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, ez.Linear);
+            }).Call(_ => { item.Remove(); });
         }
     }
 }

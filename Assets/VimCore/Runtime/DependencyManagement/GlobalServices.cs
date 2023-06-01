@@ -6,55 +6,43 @@ using UnityEngine.SceneManagement;
 
 namespace VimCore.Runtime.DependencyManagement
 {
-    [CreateAssetMenu(menuName = "Create GlobalServices", fileName = "GlobalServices", order = 0)]
+    [CreateAssetMenu]
     public class GlobalServices : ScriptableObject
     {
+        public GameObject core;
+        public GameObject[] global;
+        public GameObject[] debug;
+
 #if UNITY_EDITOR
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-
 #else
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
 #endif
-        private static void BeforeSceneLoad() => Resources.Load<GlobalServices>("GlobalServices").Init();
-
-        public GameObject gameCore;
-        public List<GameObject> globalServices;
-        public List<GameObject> debugServices;
-
-        private void Init()
+        private static void Init()
         {
 #if UNITY_EDITOR
             var scene = SceneManager.GetActiveScene();
             var inBuild = EditorBuildSettings.scenes.Any(s => s.path == scene.path);
             if (!inBuild) return;
 #endif
-            foreach (var prefab in globalServices)
-            {
-                var instance = Instantiate(prefab);
-                DontDestroyOnLoad(instance);
-                instance.name = $"~ {prefab.name} ~";
-            }
-            
-#if DEVELOPMENT_BUILD
-                     foreach (var prefab in debugServices)
-                {
-                    var instance = Instantiate(prefab);
-                    DontDestroyOnLoad(instance);
-                    instance.name = $"# {prefab.name} #";
-                }      
+            var services = Resources.Load<GlobalServices>("GlobalServices");  
+#if DEVELOPMENT_BUILD || UNITY_EDITOR
+            SpawnServices(services.debug);
 #endif
-            
-#if UNITY_EDITOR
-            foreach (var prefab in debugServices)
-            {
-                var instance = Instantiate(prefab);
-                DontDestroyOnLoad(instance);
-                instance.name = $"# {prefab.name} #";
-            }      
-#endif
-            var core = Instantiate(gameCore);
-            core.name = $"* {gameCore.name} *";
-            DontDestroyOnLoad(core);
+            SpawnServices(services.global);
+            Spawn(services.core);
+        }
+        private static void SpawnServices(IEnumerable<GameObject> services)
+        {
+            foreach (var service in services) 
+                Spawn(service);
+        }
+
+        private static void Spawn(GameObject service)
+        {
+            var instance = Instantiate(service);
+            instance.name = $"~ {service.name} ~";
+            DontDestroyOnLoad(instance);
         }
     }
 }

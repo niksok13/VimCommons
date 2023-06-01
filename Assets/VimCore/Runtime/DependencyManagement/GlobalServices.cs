@@ -19,6 +19,7 @@ namespace VimCore.Runtime.DependencyManagement
 
         public GameObject gameCore;
         public List<GameObject> globalServices;
+        public List<GameObject> debugServices;
 
         private void Init()
         {
@@ -33,8 +34,26 @@ namespace VimCore.Runtime.DependencyManagement
                 DontDestroyOnLoad(instance);
                 instance.name = $"~ {prefab.name} ~";
             }
-
+            
+#if DEVELOPMENT_BUILD
+                     foreach (var prefab in debugServices)
+                {
+                    var instance = Instantiate(prefab);
+                    DontDestroyOnLoad(instance);
+                    instance.name = $"# {prefab.name} #";
+                }      
+#endif
+            
+#if UNITY_EDITOR
+            foreach (var prefab in debugServices)
+            {
+                var instance = Instantiate(prefab);
+                DontDestroyOnLoad(instance);
+                instance.name = $"# {prefab.name} #";
+            }      
+#endif
             var core = Instantiate(gameCore);
+            core.name = $"* {gameCore.name} *";
             DontDestroyOnLoad(core);
         }
     }

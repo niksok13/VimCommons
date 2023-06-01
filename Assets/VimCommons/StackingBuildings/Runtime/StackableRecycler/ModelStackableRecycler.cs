@@ -1,10 +1,10 @@
 using UnityEngine;
+using VimCommons.Progression.Runtime.Building;
 using VimCommons.Stacking.Runtime;
-using VimCore.Runtime.MVVM;
 
 namespace VimCommons.StackingBuildings.Runtime.StackableRecycler
 {
-    public class ModelStackableRecycler : ModelBehaviour
+    public class ModelStackableRecycler : ProgressionBuilding
     {
         public StackableDefinition[] recyclable;
         
@@ -13,6 +13,7 @@ namespace VimCommons.StackingBuildings.Runtime.StackableRecycler
 
         public void OnStack(SignalStackInteract signal)
         {
+            if (NodeLevel.Value < 1) return;
             var stack = signal.Stack;
             var stackable = stack.Pop(recyclable);
             if (!stackable) return;

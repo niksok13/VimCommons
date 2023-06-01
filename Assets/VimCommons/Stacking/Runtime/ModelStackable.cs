@@ -34,9 +34,10 @@ namespace VimCommons.Stacking.Runtime
             });
         }
 
-        public void Init(Vector3 posSrc)
+        public void Init(Transform spawnPoint)
         {
-            Transform.position = posSrc;
+            Transform.position = spawnPoint.position;
+            Transform.rotation = spawnPoint.rotation;
         }
         
         public void TweenRemove(Vector3 posTo)

@@ -7,7 +7,7 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
 {
     public class ModelStackableConverter : ProgressionBuilding<StackableConverterLevel>
     {
-        public Transform unstackAnchor;
+        public Transform spawnPoint;
         public ModelStackableBatch batch;
         
         private Transform _transform;
@@ -73,8 +73,7 @@ namespace VimCommons.StackingBuildings.Runtime.StackableConverter
         private void DropResult()
         {
             var stackable = LevelData.result.Spawn();
-            stackable.Init(unstackAnchor.position);
-            stackable.Transform.rotation = unstackAnchor.rotation;
+            stackable.Init(spawnPoint);
             batch.Push(stackable);
         }
     }

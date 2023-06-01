@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "f2773f585e762480c835ac718b82b87cb111e500"
     },
+    "com.tayx.graphy": {
+      "version": "https://github.com/Tayx94/graphy.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "7b634c383ae631e7f4efaf08235c2d829a7d3ecc"
+    },
     "com.unity.ai.navigation": {
       "version": "1.1.1",
       "depth": 0,
@@ -106,6 +113,13 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.yasirkula.ingamedebugconsole": {
+      "version": "https://github.com/yasirkula/UnityIngameDebugConsole.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "28921b1aa6aa90b5b4715d79be895cc4287607b5"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 using VimCommons.Roulette.Runtime.Reward;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.EZTween;
@@ -25,7 +26,11 @@ namespace VimCommons.Roulette.Runtime.Roulette
         private ObservableData<string> Message { get; } = new();
         private ObservableData<float> RouletteAngle { get; } = new();
 
-        private void Start() => Rewards.Value = rewards;
+        private void Start()
+        {
+            Assert.AreNotEqual(rewards.Length, 0, "Rewards are not defined");
+            Rewards.Value = rewards;
+        }
 
         public void Show()
         {

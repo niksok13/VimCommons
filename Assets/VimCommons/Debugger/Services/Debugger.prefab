@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -2480536739444459995}
   - component: {fileID: -8395165807214463682}
   m_Layer: 0
-  m_Name: VimDebugger
+  m_Name: Debugger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

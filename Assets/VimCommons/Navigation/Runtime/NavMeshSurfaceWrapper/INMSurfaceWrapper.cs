@@ -1,6 +1,6 @@
 namespace VimCommons.Navigation.Runtime.NavMeshSurfaceWrapper
 {
-    public interface IWalkableSurfaceWrapper
+    public interface INMSurfaceWrapper
     {
         void SetDirty();
     }

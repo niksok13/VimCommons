@@ -4,9 +4,9 @@ using VimCore.Runtime.DependencyManagement;
 
 namespace VimCommons.Navigation.Runtime.NavMeshSurfaceWrapper
 {
-    public class ServiceNMSurfaceWrapper : MonoBehaviour, IWalkableSurfaceWrapper
+    public class ServiceNMSurfaceWrapper : MonoBehaviour, INMSurfaceWrapper
     {
-        private static readonly ServiceContainer<IWalkableSurfaceWrapper> Container = Locator.Single<IWalkableSurfaceWrapper>();
+        private static readonly ServiceContainer<INMSurfaceWrapper> Container = Locator.Single<INMSurfaceWrapper>();
         private void Awake() => Container.Attach(this);
         private void OnDestroy() => Container.Detach(this);
 

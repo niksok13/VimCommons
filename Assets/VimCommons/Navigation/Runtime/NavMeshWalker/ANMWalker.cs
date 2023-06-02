@@ -3,11 +3,11 @@ using UnityEngine.AI;
 using VimCore.Runtime.DependencyManagement;
 using VimCore.Runtime.MVVM;
 
-namespace VimCommons.Navigation.Runtime.WalkerAI
+namespace VimCommons.Navigation.Runtime.NavMeshWalker
 {
-    public abstract class AWalkerAIRunner: ModelBehaviour
+    public abstract class ANMWalker: ModelBehaviour
     {
-        private static readonly Filter<AWalkerAIRunner> Filter = Locator.Filter<AWalkerAIRunner>();
+        private static readonly Filter<ANMWalker> Filter = Locator.Filter<ANMWalker>();
         private void OnEnable() => Filter.Add(this);
         private void OnDisable() => Filter.Remove(this);
 

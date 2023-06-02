@@ -2,11 +2,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using VimCommons.Input.Runtime.InputTouch;
 using VimCore.Runtime.MVVM;
-using VimCore.Runtime.Utils;
 
-namespace VimCommons.Navigation.Runtime.Walker
+namespace VimCommons.Navigation.Runtime.NavMeshWalkComponent
 {
-    public class WalkerComponent: MonoBehaviour
+    public class NMWalkComponent: MonoBehaviour
     {
         public float walkSpeed =  5 ;
 

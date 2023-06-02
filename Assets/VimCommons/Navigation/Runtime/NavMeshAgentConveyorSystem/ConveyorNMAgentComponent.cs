@@ -2,11 +2,11 @@ using UnityEngine;
 using UnityEngine.AI;
 using VimCore.Runtime.DependencyManagement;
 
-namespace VimCommons.Navigation.Runtime.AgentConveyorSystem
+namespace VimCommons.Navigation.Runtime.NavMeshAgentConveyorSystem
 {
-    public class ConveyorAgentComponent : MonoBehaviour
+    public class ConveyorNMAgentComponent : MonoBehaviour
     {
-        private static readonly Filter<ConveyorAgentComponent> Filter = Locator.Filter<ConveyorAgentComponent>();
+        private static readonly Filter<ConveyorNMAgentComponent> Filter = Locator.Filter<ConveyorNMAgentComponent>();
 
         private void OnEnable() => Filter.Add(this);
 

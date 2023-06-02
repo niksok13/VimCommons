@@ -2,9 +2,9 @@ using Unity.AI.Navigation;
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
 
-namespace VimCommons.Navigation.Runtime.WalkableSurfaceWrapper
+namespace VimCommons.Navigation.Runtime.NavMeshSurfaceWrapper
 {
-    public class ServiceWalkableSurfaceWrapper : MonoBehaviour, IWalkableSurfaceWrapper
+    public class ServiceNMSurfaceWrapper : MonoBehaviour, IWalkableSurfaceWrapper
     {
         private static readonly ServiceContainer<IWalkableSurfaceWrapper> Container = Locator.Single<IWalkableSurfaceWrapper>();
         private void Awake() => Container.Attach(this);

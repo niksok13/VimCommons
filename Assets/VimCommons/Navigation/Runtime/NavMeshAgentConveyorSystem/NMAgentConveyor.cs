@@ -1,17 +1,17 @@
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
 
-namespace VimCommons.Navigation.Runtime.AgentConveyorSystem
+namespace VimCommons.Navigation.Runtime.NavMeshAgentConveyorSystem
 {
-    public class AgentConveyor : MonoBehaviour
+    public class NMAgentConveyor : MonoBehaviour
     {
         public Vector3 direction = Vector3.right;
 
-        private static readonly Filter<AgentConveyor> Filter = Locator.Filter<AgentConveyor>();
+        private static readonly Filter<NMAgentConveyor> Filter = Locator.Filter<NMAgentConveyor>();
         private void OnEnable() => Filter.Add(this);
         private void OnDisable() => Filter.Remove(this);
 
-        private static readonly Filter<ConveyorAgentComponent> Agents = Locator.Filter<ConveyorAgentComponent>();
+        private static readonly Filter<ConveyorNMAgentComponent> Agents = Locator.Filter<ConveyorNMAgentComponent>();
 
         private Collider _hitbox;
         public Collider Hitbox => _hitbox ??= GetComponent<Collider>();

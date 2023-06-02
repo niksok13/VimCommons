@@ -1,12 +1,11 @@
 using UnityEngine;
 using VimCore.Runtime.DependencyManagement;
-using VimCore.Runtime.Utils;
 
-namespace VimCommons.Navigation.Runtime.WalkerAI
+namespace VimCommons.Navigation.Runtime.NavMeshWalker
 {
     public class ServiceWalkerAIRunner : MonoBehaviour
     {
-        private static readonly Filter<AWalkerAIRunner> Filter = Locator.Filter<AWalkerAIRunner>();
+        private static readonly Filter<ANMWalker> Filter = Locator.Filter<ANMWalker>();
 
         private void Update()
         {

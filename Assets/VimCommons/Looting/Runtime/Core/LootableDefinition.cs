@@ -35,9 +35,7 @@ namespace VimCommons.Looting.Runtime.Core
             EZ.Spawn().Tween(0.3f, ez => {
                 result.Transform.localPosition = Helper.LerpParabolic(posFrom, posTo, ez.Linear, 2);
                 result.Transform.localScale = Vector3.one * ez.BackOut;
-            }).Call(_ => {
-                Filter.Add(result);
-            });
+            }).Call(_ => Filter.Add(result));
         }
 
         public void Remove(ModelLootable lootable, Transform target)
@@ -47,9 +45,7 @@ namespace VimCommons.Looting.Runtime.Core
             EZ.Spawn().Tween(ez => {
                 lootable.Transform.localScale = Vector3.one*(1-ez.BackOut);
                 lootable.Transform.position = Helper.LerpParabolic(from, target.position + Vector3.up, ez.Linear);
-            }).Call(_ =>  {
-                Pool.Remove(lootable);
-            });
+            }).Call(_ => Pool.Remove(lootable));
         }
         
 

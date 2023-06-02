@@ -3,7 +3,7 @@ using VimCore.Runtime.DependencyManagement;
 
 namespace VimCommons.Navigation.Runtime.AgentConveyorSystem
 {
-    public class ServiceAgentConveyorSystem: MonoBehaviour
+    public class ServiceAgentConveyorRunner: MonoBehaviour
     {
         private static readonly Filter<AgentConveyor> Filter = Locator.Filter<AgentConveyor>();
 
